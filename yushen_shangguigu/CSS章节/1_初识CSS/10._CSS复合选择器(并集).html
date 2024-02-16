@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .rich {
+            color: gold;
+        }
+
+        .beauty {
+            color: red;
+        }
+
+        .dog {
+            color: green;
+        }
+
+        .game {
+            color: hotpink;
+        }
+
+        #fighter {
+            color: chocolate;
+        }
+
+
+        /* 并集选择器   "或"
+        作用: 选中多个选择器对应的元素,又称：分组选择器
+        语法: 选择器1,选择器2,选择器3...选择器n {}
+        注意: 
+            1. 并集选择器，一般竖着写
+            2. 任何形式的选择器,都可以作为并集选择器的一部分
+            3. 并集选择器,通常用于集体声明,可以缩小样式表体积
+        */
+        .rich,
+        .beauty,
+        .dog,
+        .game,
+        #fighter {
+            /* 
+            这个"并集选择器"的含义是：rich、beauty、dog、game、fighter这些选择器也含有下面的属性！！！
+            如果在并集选择器中也对color设定,也是 "后来居上"：
+            意思就是, 如果这个并集选择器是写在最上面,那么并集选择器的color: black 被各自的选择器的color覆盖了
+            */
+            /* color: black; */
+            font-size: 30px;
+            background-color: lightgray;
+            width: 180px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 并集选择器 -->
+    <h2 class="rich">土豪张三</h2>
+    <h2 class="beauty">明星李四</h2>
+    <h2>破产王五(不加任何样式)</h2>
+    <br>
+
+    <p class="dog">小狗旺财</p>
+    <p class="game">QQ斗地主</p>
+
+    <p id="fighter">F35</p>
+
+
+
+</body>
+
+</html>

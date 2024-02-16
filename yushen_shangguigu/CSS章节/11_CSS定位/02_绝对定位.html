@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 绝对定位
+        1. 如何设置绝对定位？
+        给元素设置position: absolute
+        可以使用left、right、top、bottom四个属性调整位置 
+        2.绝对定位的参考点在哪里？
+        参考它的包含块
+        3.绝对定位元素的特点
+        ①.脱离文档流，会对后面的兄弟元素、父元素有影响
+        ②.left不能和right一起设置，top和bottom不能一起设置
+        ③.绝对定位、浮动不能同时设置，如果同时设置,浮动失效,定位为主。
+        ④.绝对定位的元素,也能通过margin调整位置,但同样不推荐这么做
+        ⑤.无论是什么元素(行内、行内块、块级)设置为绝对定位之后，都变成了定位元素
+        4.何为定位元素？
+        ---默认宽、高都被内容所撑开,且能自由设置宽高。(比如span,是行内元素,当设置为绝对定位后,就能够设置宽、高了)
+        */
+
+
+        /* 
+          何为包含块？？ 非常重要的概念
+          1. 没有脱离文档流的元素,父元素就是包含块
+          2. 脱离文档流的元素,第一个开启定位的祖先元素,就是它的包含块
+          就比如box2,使用了绝对定位,绝对定位会导致元素脱离文档流,所以box2的包含块要去找第一个开启定位的祖先元素
+          那么,outer如果也设定了position: relative;的话,那么outer就是box2的包含块
+        */
+
+        .outer {
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid black;
+            padding: 20px;
+            /* 当outer不设置相对定位,那么outer就不是box2的包含块,那么box2的绝对定位后的位置就不是这样了,注释掉下行就知道了 */
+            position: relative;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+        }
+
+        .box1 {
+            background-color: #888;
+        }
+
+        .box2 {
+            background-color: aqua;
+            /* 开启绝对定位：开启绝对定位的元素,与相对定位不同,是脱离了文档流了 */
+            position: absolute;
+            /* 这里有个小坑：虽然也能用margin,但是只有绝对定位写了right,margin-right才有效果
+               同理,写了top,margin-top才有效果
+            */
+            /* top: 0px; */
+            left: 20px;
+            /* bottom: 0px; */
+            top: 220px;
+
+            /* margin-top: 40px; */
+            /* margin-left: 20px; */
+            /* 由于绝对定位没有设置bottom,所以margin-bottom: 100px; 没有效果 */
+            /* margin-bottom: 100px; */
+
+            transition: 1s all linear;
+
+        }
+
+        .box3 {
+            background-color: purple;
+        }
+
+        .outer:hover .box2 {
+            left: 220px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+
+</html>

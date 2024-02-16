@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            /* 第一张长度单位: px(像素) */
+            width: 200px;
+            height: 200px;
+            font-size: 30px;
+            background-color: skyblue;
+        }
+
+        #d2 {
+            /* 第二章长度单位:
+            em(相对于当前元素、或父元素的font-size的倍数)
+            注意：如果d2自己没有写font-size的话,那就找自己父元素,就比如这个例子,先找body,body没有,找html,
+            如果都没有设置font-size,那就找浏览器默认的字体大小(谷歌浏览器字体大小默认是16px)
+            现在, 我给body设置一个font-size,看下是否width和height是不是font-size的10倍!!!
+            */
+            width: 10em;
+            height: 10em;
+            /* font-size: 30px; 如果font-size的单位px,那么width和height的em就是根据自己的字体大小计算*/
+            /* 如果font-size本身也是em的单位,那么width、height、font-size就都是找父类的font-size的大小 */
+            font-size: 1em;
+            background-color: orange;
+        }
+
+        #d3 {
+            /* 第三种长度单位：rem (root-em,相对于根元素(标签html)的font-size的倍数)
+            只要是rem的单位,就找根元素,即html的font-size的字体大小,如果没有设置,那就根据浏览器的默认字体大小计算
+            */
+            width: 10rem;
+            height: 10rem;
+            /* font-size: 20px; 这里设置20px对width和height没有起作用,因为它们俩的单位是rem */
+            font-size: 1rem;
+            background-color: chocolate;
+        }
+
+        html {
+            /* 跟上面的rem单位有关 */
+            font-size: 40px;
+        }
+
+        #d4 {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            background-color: gray;
+        }
+
+        .inside {
+            /* 第四种长度单位：%(相对于其父元素的百分比,该例子就是id=4的div) */
+            width: 50%;
+            height: 25%;
+            font-size: 150%;
+            background-color: purple;
+        }
+
+        .test {
+            font-size: 60px;
+            /* 缩进2em,就相当于80px * 2 = 160px */
+            text-indent: 2em;
+            background-color: yellowgreen;
+
+        }
+    </style>
+</head>
+
+<body style="font-size: 30px;">
+
+    <div id="d1">1</div>
+    <hr>
+    <div id="d2">2</div>
+    <hr>
+    <div id="d3">3</div>
+    <hr>
+    <div id="d4">
+        <div class="inside">4</div>
+    </div>
+    <hr>
+    <div class="test">好好学习,天天向上</div>
+
+</body>
+
+</html>

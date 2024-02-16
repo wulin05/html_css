@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_否定伪类</title>
+
+    <style>
+        /* 否定伪类: 
+        格式： :not(选择器) 
+        作用:  排除满足括号中条件的元素
+        */
+
+        /* 选中的是div的儿子p元素,但是排除类名为fail的元素 */
+        /* div>p:not(.fail) {
+            color: gold;
+        } */
+
+        /* 选中的是div的儿子p元素,但是排除含有title属性的所有元素 */
+        /* div>p:not([title]) {
+            color: goldenrod;
+        } */
+
+        /* 选中的是div的儿子p元素,但是排除属性title包含"哥们"的元素 */
+        div>p:not([title*="哥们"]) {
+            color: blueviolet;
+        }
+
+        /* 选中的是div的儿子p元素,但排除第一个儿子p元素
+          第一名"张三"颜色不变red, 其他人颜色都为red
+        */
+        /* 注意not(),括号中的 :first-child是伪类 */
+        /* 总结就是: not()括号中可以使用基本选择器、复合选择器、属性选择器、伪类选择器 */
+        div>p:not(:first-child) {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+        <p class="fail" title="哥们,你要加油了~ 孙七">孙七: 58分</p>
+        <p class="fail" title="哥们,你要加油了~ 老八">老八: 38分</p>
+    </div>
+
+</body>
+
+</html>

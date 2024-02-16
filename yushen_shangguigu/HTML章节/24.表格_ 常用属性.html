@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24.表格_ 常用属性</title>
+</head>
+
+<body>
+
+    <!-- table
+    常用4个属性: border="1" width="500" height="300" cellspacing="0"
+        border='1'控制的是表格外边框,不控制单元格边框的宽度,想要控制单元格的宽度,后期靠CSS控制。
+        height="300"表示整个表 "至少" 300px的高度
+        cellspacing是两单元格之间的边框距离为0,不是重合哦。边框合并(也叫重叠)的话,需要css的margin属性
+    -->
+    <table border="1" width="500" height="300" cellspacing="0">
+
+        <!-- 表格标题 caption
+        caption标题,4个属性都没有,后续是通过css来改变样式-->
+        <caption>学生信息</caption>
+
+        <!-- 表格头部 thead
+        表格头部thead、表格主体tbody、表格脚注tfoot 都是常用3个属性:height="" align="" valign=""
+        align(水平方向)有 left/center/right; valign(垂直反向)有 top/middle/bottom
+
+        // 注意 tr(行) 常用属性和thead、tbody、tfoot的3个常用属性一样:height="" align="" valign=""
+        所以, 将thead、tbody、tfoot、tr这4个一起记, 他们都有 height="" align="" valign="" 3个属性
+        -->
+        <thead height="50" align="center" valign="middle">
+
+            <!-- tr(row: 行)
+                上面说了,跟thead、tbody、tfoot属性一起记....
+            -->
+            <tr>
+
+                <!-- 表格头部单元格(简称: '表头单元格' th) 
+                常用属性和表格主体tbody的单元格(普通单元格 td)相同
+                -->
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>名族</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+
+        <!-- 表格主体 tbody
+        这里有一个坑: 如果设置table的height属性等于"500",说明这个表 至少 高度是500px,
+        首先、表格头部的height="50",表格脚注height="50px",那么如果在tbody的height="300",
+        那么整个表的高度才50+50+300=400, 明显小于500,这样写的话,表格主题tbody的高度是不会有变化的,
+        整体要满足表格至少高度为500px, 如果tbody的height="450",才会看出表格的单元格变高了。   
+        -->
+        <tbody height="230" align="center" valign="middle">
+
+            <tr>
+                <!-- 表格主体单元格(简称: '普通单元格' td)
+                width: 设置单元格的宽度,同列所有单元格全都受影响
+                height: 设置单元格的高度,同行所有单元格全都受影响
+                align: 设置单元格的水平对齐方式
+                valige: 设置单元格的垂直对齐方式
+                
+                rowspan: 指定要跨的行数
+                colspan: 指定要跨的列数
+                其实就是合并单元格.....
+                 -->
+                <td>张三</td>
+                <td>男</td>
+                <td>18</td>
+                <td>汉族</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>女</td>
+                <td>20</td>
+                <td>满族</td>
+                <td>群众</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>男</td>
+                <td>19</td>
+                <td>回族</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>赵六</td>
+                <td>女</td>
+                <td>21</td>
+                <td>壮族</td>
+                <td>团员</td>
+            </tr>
+        </tbody>
+
+
+        <!-- 表格脚注 tfoot
+        -->
+        <tfoot height="50" align="center" valign="middle">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>共计: 4人</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+</body>
+
+</html>

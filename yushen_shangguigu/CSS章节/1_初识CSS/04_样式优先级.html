@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS外部样式 -->
+    <link rel="stylesheet" href="./index4.css">
+
+    <!-- CSS内部样式 -->
+    <style>
+        h1 {
+            color: green;
+            font-size: 80px;
+        }
+
+        h1 {
+            color: yellow;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- 
+        CSS三种样式: 行内样式、内部样式、外部样式的优先级
+        1. 行内样式优先级最高
+        2. 内部样式和外部样式优先级相同,取决于谁写在后面,就覆盖了前面的样式,"后来居上"
+        3. 但是哪种样式有的,也能呈现到页面：比如外部样式index4.css有字体大小,
+           内部样式,行内样式都没有字体大小,那就是以外部样式的字体大小呈现。。
+        4. 同一种样式(比如都是内部样式),优先级也是和编写顺序有关："后来居上"
+     -->
+
+    <h1>欢迎来到尚硅谷学习</h1>
+    <!-- <h1 style="color: red;">欢迎来到尚硅谷学习</h1> -->
+
+</body>
+
+</html>

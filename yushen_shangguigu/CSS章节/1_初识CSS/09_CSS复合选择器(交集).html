@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* class类选择器 
+        这是前一章节学的类选择器
+        */
+        .rich {
+            color: gold;
+        }
+
+        .beauty {
+            color: red;
+        }
+
+        /* 1. 交集选择器  "且"
+        作用: 选中同时符合多个条件的元素(更精确查找),交集有并且的含义: 年前且长得帅
+        语法: 选择器1选择器2选择器3...选择器n {}
+        例如：
+            p标签下且class类名分别为beauty、beauty01的元素
+            这里是想表达: p标签下的,而不是h2标签下class类名也是beauty的"明星李四"
+        */
+        p.beauty {
+            color: green;
+        }
+
+        p.beauty01 {
+            color: burlywood;
+        }
+
+        /* p标签下class类名为beauty01 且 id为swxf的元素 */
+        p.beauty01#swxf {
+            color: darkmagenta;
+        }
+
+        /* ID选择器的话,一般单独使用。因为id是唯一的了,还需要什么class呢,没有意义!
+        如果没有下面的ID选择器的话,那么"冰封王座"是会匹配上之前的交集选择器p.beauty01,颜色是：burlywood。
+        */
+        #bfwz {
+            color: brown;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 1. 交集选择器 -->
+    <h2 class="rich">土豪张三</h2>
+    <h2 class="beauty">明星李四</h2>
+    <br>
+
+    <p class="beauty">小狗旺财</p>
+    <p class="beauty">小猪佩奇</p>
+    <p class="beauty01">布娃娃</p>
+    <p class="beauty01" id="swxf">守望先锋</p>
+    <p class="beauty01" id="bfwz">冰封王座</p>
+
+
+</body>
+
+</html>

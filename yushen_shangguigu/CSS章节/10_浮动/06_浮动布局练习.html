@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 预先写好类选择器leftfic,设置左浮动 */
+        .leftfix {
+            float: left;
+        }
+
+        /* 预先写好类选择器rightfic,设置右浮动 */
+        .rightfix {
+            float: right;
+        }
+
+        /* 预先写好伪元素选择器clearfix::after , 用来清除浮动后带来的影响 */
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .container {
+            width: 960px;
+            /* 2. 将整个页面设置在浏览器中居中 */
+            margin: 0 auto;
+            /* 3. 给所有子元素设置文本居中 */
+            text-align: center;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        .banner1 {
+            width: 540px;
+            margin: 0 10px;
+        }
+
+        .banner2 {
+            width: 200px;
+        }
+
+        .logo,
+        .banner1,
+        .banner2 {
+            /* 1. 将头部的3个div统一设置块的高度80px,背景色: #ccc */
+            height: 80px;
+            background-color: #ccc;
+            /* 4. 将头部的三个div的文字设置垂直居中 */
+            line-height: 80px;
+        }
+
+        /* 5. 设置菜单的样式 */
+        .menu {
+            height: 30px;
+            background-color: #ccc;
+            margin-top: 10px;
+            /* 6. 设置菜单文字垂直居中 */
+            line-height: 30px;
+        }
+
+        .item1,
+        .item2 {
+            /* 7. 给内容区上部的栏目一、栏目二设置宽高和边框,以及右外边距margin-right */
+            width: 368px;
+            height: 198px;
+            border: 1px solid black;
+            margin-right: 10px;
+            /* 9. 给内容区的上部栏目一、栏目二的文字设置垂直居中 */
+            line-height: 198px;
+        }
+
+        .content {
+            /* 8. 给内容区整体设置上外边距margin-top */
+            margin-top: 10px;
+        }
+
+        .bottom {
+            /* 10. 给内容区左侧下部整体设置上外边距margin-top */
+            margin-top: 10px;
+        }
+
+        /* 11. 给内容区左侧下部的栏目三、栏目四、栏目五、栏目六设置样式 */
+        .item3,
+        .item4,
+        .item5,
+        .item6 {
+            width: 178px;
+            height: 198px;
+            border: 1px solid black;
+            margin-right: 10px;
+            /* 12. 设置文字垂直居中 */
+            line-height: 198px;
+        }
+
+        /* 13. 同11,给内容区右侧的栏目七、栏目八、栏目九设置样式 */
+        .item7,
+        .item8,
+        .item9 {
+            width: 198px;
+            height: 128px;
+            border: 1px solid black;
+            line-height: 128px;
+        }
+
+        .item8 {
+            margin: 10px 0;
+        }
+
+        .footer {
+            /* width: 960px; 可以省略,因为container已经设置了960px */
+            height: 60px;
+            background-color: #ccc;
+            line-height: 60px;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="page-header clearfix">
+            <div class="logo leftfix">logo</div>
+            <div class="banner1 leftfix">banner1</div>
+            <div class="banner2 leftfix">banner2</div>
+        </div>
+
+        <!-- 菜单 -->
+        <div class="menu">菜单</div>
+
+        <!-- 内容区 -->
+        <div class="content clearfix">
+
+            <!-- 内容区左侧 -->
+            <div class="left leftfix">
+                <!-- 内容区左侧上部栏目一、栏目二 -->
+                <div class="top clearfix">
+                    <div class="item1 leftfix">栏目一</div>
+                    <div class="item2 leftfix">栏目二</div>
+                </div>
+                <!-- 内容区左侧下部 -->
+                <div class="bottom clearfix">
+                    <div class="item3 leftfix">栏目三</div>
+                    <div class="item4 leftfix">栏目四</div>
+                    <div class="item5 leftfix">栏目五</div>
+                    <div class="item6 leftfix">栏目六</div>
+                </div>
+            </div>
+
+            <!-- 内容区右侧 -->
+            <div class="right rightfix">
+                <div class="item7">栏目七</div>
+                <div class="item8">栏目八</div>
+                <div class="item9">栏目九</div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div class="footer">页脚</div>
+    </div>
+</body>
+
+</html>

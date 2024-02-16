@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+
+            /* 总结：
+            padding: 值不能为负数,跟外边距margin,都是没有所谓的padding-color、padding-style的属性
+            行内元素的左右内边距是没问题的,上线内边距不能完美地设置(可能会影响其他行的元素)
+            块元素、行内块元素,四个方向内边距都可以完美地设置
+            */
+
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            background-color: skyblue;
+
+
+            padding-left: 20px green solid;
+            padding-top: 30px;
+            padding-right: 40px;
+            padding-bottom: 50px;
+            /* padding的复合属性1 20px代表4个方向内边距都是20px */
+            padding: 20px;
+            /* padding的复合属性2 20px代表上下内边距,40px代表左右内边距*/
+            padding: 20px 40px;
+            /* padding的复合属性3 20px代表上内边距,30px代表左右内边距,40px代表下内边距 */
+            padding: 20px 30px 40px;
+            /* padding的复合属性4 20px代表上内边距...... */
+            padding: 20px 30px 40px 50px;
+        }
+
+        .test1 {
+            background-color: orange;
+            font-size: 20px;
+            padding-left: 20px;
+            padding-right: 30px;
+            /* 行内元素的上下内边距不占位,有可能导致其他行的元素被这上下内边距padding值影响到 */
+            padding-top: 40px;
+            padding-bottom: 50px;
+            /* 这里是我自己的想法,将行内元素的显示模式修改成行内块或者块元素,而行内块元素和块元素的上下内边距不会影响别人了 */
+            display: inline-block;
+        }
+
+        /* 这里是为了证明img(行内块元素)和块元素的上下内边距, 不影响其他行的元素*/
+        img {
+            width: 200px;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">你好呀~~~</div>
+    <hr>
+    <span class="test1">我很好呀~~~</span>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, doloribus.</div>
+    <hr>
+    <img src="../../CSS章节/1_初识CSS/path_test/海军大将.jpg" alt="海军大将" title="船长">
+    <div>我是呼风唤雨的海军大将.....</div>
+</body>
+
+</html>

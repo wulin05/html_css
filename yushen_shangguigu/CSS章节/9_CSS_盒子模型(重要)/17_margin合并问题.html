@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* margin合并出现问题,只是存在于上下外边距之间,
+        也就是：当1的div下外边距是50px,2的div上外边距也是60px,1和2之间不会变成有110px的外边距,
+               开发者工具观察,1和2之间是60px的外边距,而且1的下外边距是50px,2的上外边距是60px。
+               左右外边距margin是正常的,a的右外边距是30px,b的左外边距是50px,那么a和b之间总的左右外边距是80px。
+
+               这种上下margin合并问题,不一定说要解决,如果确定了上下外边距需要110px,那就给1设置下外边距是110px
+               或者2设置上外边距110px,就可以了。
+        */
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1 {
+            background-color: deepskyblue;
+            margin-bottom: 50px;
+        }
+
+        .box2 {
+            background-color: orange;
+            margin-top: 60px;
+        }
+
+        .test {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+
+        .testa {
+            background-color: purple;
+            margin-right: 30px;
+        }
+
+        .testb {
+            background-color: tomato;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <hr>
+    <div class="test testa">a</div>
+    <div class="test testb">b</div>
+</body>
+
+</html>

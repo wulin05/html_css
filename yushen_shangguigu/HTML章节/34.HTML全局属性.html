@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34.HTML全局属性</title>
+    <style>
+        #hello1 {
+            color: blue;
+        }
+
+        #hello2 {
+            color: pink;
+            font-family: "Microsoft YaHei";
+            font-size: 20px;
+        }
+
+        .students {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    1. id: 给标签指定唯一标识,注意: id是不能重复的
+           作用: 可以让label标签与表单控件相关联;也可以与CSS、JS配合使用
+           注意: 不能与以下 HTML 元素中使用:
+           <head>、<html>、<meta>、<script>、<style>、<title> 
+    
+    2. class：给标签指定类名,随后通过CSS就可以给标签设置样式
+    
+    3. style: 给标签设置CSS样式
+
+    4. dir：内容的方向,值: ltr, rtl
+            注意不能再以下 HTML 元素中使用:
+            <head>、<html>、<meta>、<script>、<style>、<title> 
+    
+    5. title：给标签设置一个文字提示,一般超链接和图片用的比较多
+
+    6. lang: 给标签指定语言,具体规范和可旋转请参考关于 HTML设置语言
+             注意不能再以下 HTML 元素中使用:
+             <head>、<html>、<meta>、<script>、<style>、<title> 
+     -->
+
+
+    <!-- id不能相同 -->
+    <div id="hello1">你好呀~</div>
+    <div id="hello2">你好呀!</div>
+
+    <div class="students">张三</div>
+    <div class="students">李四</div>
+
+    <div style="color: green;">旺财</div>
+
+    <bdo dir="rtl">你是年少的欢喜</bdo>
+    <div dir="rtl">你是年少的欢喜</div>
+
+    <div title="英雄联盟">LOL</div>
+    <a href="https://www.baidu.com" title="broswer baidu">去百度</a>
+
+    <div lang="zh-CN">我爱你哦~</div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 注意: html lang="en" 意思就是本页面内所有的内容都是en,所以css的div:lang(en){} 其实就等于 div {} -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_语言伪类</title>
+    <!-- :lang() 语言伪类, 根据指定的语言选择元素(本质是看lang属性的值) -->
+
+    <style>
+        div:lang(zh-CN) {
+            color: red;
+        }
+
+        /* 这个不受下面的:lang(en) {} 的影响是因为 div:lang(en) {} , 由于有div,所以优先级比没有div的高
+        意思就是不仅是 lang(en),并且是div的标签....感觉到了么!!!
+        */
+        div:lang(en) {
+            color: green;
+        }
+
+        /* 如果想要页面内所有的lang(en)元素都是绿色,那么: */
+        :lang(en) {
+            color: deeppink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div lang="zh-CN">尚硅谷</div>
+    <div lang="en">atguigu</div>
+    <p>前端</p>
+    <span>学Vue</span>
+</body>
+
+</html>

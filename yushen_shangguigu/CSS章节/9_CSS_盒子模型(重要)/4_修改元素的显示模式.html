@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            font-size: 20px;
+            /* display: block;         对于块元素,不写block,默认值就是block */
+            /* display: inline-block;  inline-block变成行内块元素,不独占一行, 但width和height起作用 */
+            /* display: inline;        inline变成行内元素,不独占一行, width和height不起作用 */
+            display: inline;
+
+        }
+
+        #d1 {
+            background-color: skyblue;
+        }
+
+        #d2 {
+            background-color: orange;
+        }
+
+        #d3 {
+            background-color: green;
+        }
+
+        /* a是行内元素,不独占一行,不能设置宽高,但是可以通过display修改显示模式为块元素或行内块元素 */
+        a {
+            text-decoration: none;
+            font-size: 20px;
+
+            width: 200px;
+            height: 200px;
+            /* 设置行内块、或块,上面的width和height就起作用了~~~ */
+            display: inline-block;
+            /* display: none;  这个none很狠,直接a标签完全消失了~~~ */
+        }
+
+        .link-baidu {
+            cursor: pointer;
+            background-color: chocolate;
+        }
+
+        .link-jd {
+            cursor: crosshair;
+            background-color: pink;
+        }
+
+        .link-tout {
+            cursor: wait;
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="d1">你好呀</div>
+    <div id="d2">我好呀</div>
+    <div id="d3">他好呀</div>
+    <hr>
+
+    <a href="https://www.baidu.com" class="link-baidu">去百度</a>
+    <a href="https://www.jd.com" class="link-jd">去京东</a>
+    <a href="https://www.toutiao.com" class="link-tout">去头条</a>
+
+</body>
+
+</html>

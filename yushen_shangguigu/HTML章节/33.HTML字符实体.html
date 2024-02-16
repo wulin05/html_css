@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33.HTML字符实体</title>
+</head>
+
+<body>
+
+    <!-- 
+        HTML实体
+        在HTML中我们可以用一种特殊的形式,来表示某个符号,这种特殊形式的内容,就是HTML实体
+        比如 空格: &nbsp;  <: &lt;  >: &gt; &: &amp;  ¥: &yen;  ©: &copy;
+             *: &times;  ÷: &divide;
+        字符实体组成(两种方式):   &实体名称; 或者 &#实体编号;
+     -->
+
+    <div>我 美女</div>
+    <div>我 美女</div>
+    <div>我&nbsp;&nbsp;&nbsp;&nbsp;美女</div>
+    <div>我&#160;&#160;&#160;&#160;帅哥</div>
+
+    <!--  其实意思就是:  <的字符实体是 &lt;   >的字符实体是 &gt;  注意不要漏了; -->
+    <div>我们学过很多的标题标签,其中<h1>是最厉害的一个!</div>
+    <div>我们学过很多的标题标签,其中&lt;h1&gt;是最厉害的一个!</div>
+
+    <!-- 其实意思就是 &的字符实体是 &amp; -->
+    <div>我们今天学习了一个可以表示空格的字符实体,它是:&nbsp;</div>
+    <div>我们今天学习了一个可以表示空格的字符实体,它是:&amp;nbsp;</div>
+
+    <div>我们今天学习了一个可以表示&的字符实体,它是:&amp;amp;</div>
+
+    <div>当前的商品价格是: ¥199</div>
+    <div>当前的商品价格是: &yen;199</div>
+
+    <div>©版权所有</div>
+    <div>&copy;版权所有</div>
+
+    <div>2 * 2 = 4</div>
+    <div>2 × 2 = 4</div>
+    <div>2 &times; 2 = 4</div>
+
+    <div>2 / 2 = 1</div>
+    <div>2 ÷ 2 = 1</div>
+    <div>2 &divide; 2 = 1</div>
+
+</body>
+
+</html>

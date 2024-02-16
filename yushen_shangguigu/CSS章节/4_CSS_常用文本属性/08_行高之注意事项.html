@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        注意点：
+        1. 行高过小,文字重叠,且最小值为0,不能为负值
+        2. 行高是可以继承的：为了更好地呈现文字,最好写数值,不写像素
+        3. line-height和height是什么关系？
+           设置了height,盒子(元素、容器)高度就是height的值(甭管line-height是多少,比如line-height=300px,而height=100px,容器就是100px)
+           没有设置height,盒子高度就是line-height*行数,比如line-height=100px,有3行,那么容器的height=100*3=300px !!!
+        */
+        #d1 {
+            font-size: 40px;
+            background-color: skyblue;
+            line-height: 60px;
+        }
+
+        #d2 {
+            font-size: 20px;
+            background-color: pink;
+            /* 
+            d2中有span元素,如果d2写line-height的话,span元素会继承d2的行高,那么明显span的尚硅谷的字体font-szie: 100px的大小,肯定跟上一行重叠了
+            但是如果d2元素不设置这个line-height的话,那么就会以该行中最大的字体作为标准设置行高,这样span中的"尚硅谷"三个字就不会与上一行重叠了。
+            另外,一行中有大文字,也有小文字,那么大小文字他们的基准线一样：就是小的x和大的x,他们的基线一样。
+            */
+            /* 
+            这里还有一个知识点: 推荐行高用1.5或150%,不用像素px,因为span如果没有设置line-height,那么就继承了
+            父元素(就是d2)的line-height, 这时候d2的line-height用1.5的话,那么span继承也是1.5,
+            意味着span的行高line-height=100px*1.5=150px; 
+            但是如果父元素(d2)的行高line-height=30px(使用px像素单位),那么span继承的也是30px,
+            那么结果就是容器height还没有行高line-height高,结果可想而知~~
+            */
+            /* line-height: 30px; */
+            line-height: 1.5;
+        }
+
+        span {
+            font-size: 100px;
+            color: red;
+        }
+
+        #d3 {
+            font-size: 30px;
+            background-color: orange;
+            /* line-height:行高 */
+            line-height: 45px;
+            /* height: 盒子(容器,因为没有设置padding、border,盒子高度就是内容区content的高度)高度 */
+            height: 100px;
+        }
+
+        #d4 {
+            font-size: 30px;
+            background-color: aqua;
+            /* 
+            首先、d4没有设置height,即,容器的高度,那么：
+            line-height行高为0,意味着,容器的高度也是0,不论多少行,都挤在一行,而且对于浏览器,无论有多少行东西,都可以往这一行里面挤~~
+            并且注意看浏览器的效果,发现背景色都没有了。因为都没有高度了,哪来的背景色呢,你说是吧！
+            并且,会发现,文字的头顶有一部分消失了.....
+            */
+            line-height: 0px;
+        }
+
+        /* 说了这么多line-height,主要有2个应用场景 */
+        /* 1.行高line-height应用场景1：调整"多行"文字的间距 */
+        #d5 {
+            font-size: 30px;
+            background-color: skyblue;
+            line-height: 80px;
+        }
+
+        /* 2.行高line-height应用场景2：单行文字的垂直居中  注意是"单行" */
+        #d6 {
+            font-size: 40px;
+            background-color: peru;
+            /* 设置容器高度是300px */
+            height: 200px;
+            /* 设置了行高是300px,那不就意味着文字在容器的中间了么~~ */
+            line-height: 200px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发
+    </div>
+
+    <div id="d2">
+        atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu<span>尚硅谷</span>让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发
+    </div>
+
+    <div id="d3">
+        atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发
+    </div>
+
+    <hr>
+    <div id="d4">
+        atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发
+    </div>
+
+    <hr>
+    <div id="d5">
+        atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发
+    </div>
+
+    <div id="d6">
+        atguigu尚硅谷让天下没有难掉的头发
+    </div>
+
+</body>
+
+</html>

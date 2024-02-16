@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #d1 {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+
+            /* border的样式,width/color/style的属性一个个写,麻烦, 但其实最主要一定要写border-style,不然页面没有边框的效果 */
+            border-width: 2px;
+            border-color: red;
+            border-style: dashed;
+
+            /* border的复合属性,写到一行上 */
+            border: 2px red solid;
+
+            /* 细分,可以对4个方向的边框的3个属性width、color、style分别设定,所以有4*3=12写法 */
+            /* 只是知道可以这样细分写,但是基本不这么写边框样式,多累呀~~~ */
+            border-top-width: 10px;
+            border-right-width: 20px;
+            border-bottom-width: 30px;
+            border-left-width: 40px;
+
+            border-top-color: red;
+            border-right-color: green;
+            border-bottom-color: orange;
+            border-left-color: yellow;
+
+            border-top-style: solid;
+            border-right-style: dashed;
+            border-bottom-style: double;
+            border-left-style: dotted;
+
+            /* 所以上面已经有3+1+12=16种写法了,下面的4个其实是对上面的12中进行复合写法： */
+            border-top: 5px purple solid;
+            border-right: 10px chocolate dashed;
+            border-bottom: 15px goldenrod dotted;
+            border-left: 20px mediumseagreen inset;
+
+            /* 总结：
+            1.最常用写法是: border: 2px red solid, 同时对4个方向的边框做设定！！！！！
+            2.接下来写法是: border-width / border-color / border-style
+            3.然后的写法是: border-top / border-right / border-bottom / border-left
+            4.不常用写法是：细分的12个写法,一般没有人这么变态,对4个方向的边框做不同的设置：
+                          上边框2px 绿色 实线; 下边框3px 橙色 虚线; 右边框....; 左边框...; 太反人类了！！！！！
+            */
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="d1">你好呀~</div>
+</body>
+
+</html>

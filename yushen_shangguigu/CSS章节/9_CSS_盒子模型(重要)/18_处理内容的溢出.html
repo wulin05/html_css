@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            width: 400px;
+            height: 200px;
+            background-color: skyblue;
+
+            /* id="d1",目前的情况是,内容在高度上溢出 */
+            /* 当加了id="d2"的div内容后,它在横向上溢出了id="d1"的父容器div */
+            /* 这时候,想要的结果是,父容器div也在横向上撑开内容区
+            操作是：在 "父容器" 上添加overflow:visible hidden scroll auto....
+            */
+            /* 
+            hidden,结果是横向和纵向溢出的部分都被隐藏起来
+            visible是默认值....
+            scroll效果是滚动条,无论内容是否溢出,都会出现滚动条
+            auto与scroll类似,但更好,在没有溢出的情况下,不会出现滚动条
+            overflow-x: hidden;
+            overflow-y: scroll;
+            overflow-x,overflow-y不建议使用,MDN上说了,这两个是实验性的,有可能未来功能会改甚至消失
+            
+            所以,最常用的是auto和hidden。 还记得hidden可以解决之前的margin塌陷问题吧...
+            */
+            overflow: auto;
+        }
+
+        #d2 {
+            width: 1000px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos voluptates est fugiat vitae
+        fugit, quisquam ducimus delectus eveniet ut tempore explicabo molestias velit, facilis, neque quod nesciunt
+        <div id="d2">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla maiores at exercitationem rem hic
+            provident accusantium distinctio quos officiis qui suscipit, tempora sunt aliquam et optio blanditiis
+            ratione aspernatur. At, asperiores. Modi iste laboriosam, harum id cum labore rerum esse deleniti
+            reprehenderit? Necessitatibus reprehenderit blanditiis aut distinctio, iure nulla illum.
+        </div>
+        accusantium ad natus ullam similique assumenda soluta amet! Ex delectus illo quo omnis voluptatibus fugit!
+        Facilis accusamus sed eum consectetur! Iusto amet labore, inventore, aspernatur aliquam nesciunt voluptatibus
+        dicta ratione esse nostrum necessitatibus in. Fuga distinctio, autem magni libero minima quam, mollitia est iste
+        ab ut quis ipsum maiores? Reprehenderit magni non soluta impedit quis esse voluptates porro quas maiores nostrum
+        architecto earum, sunt hic qui aliquam accusantium. Voluptas ut illo architecto facilis.
+    </div>
+</body>
+
+</html>

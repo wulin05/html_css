@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            overflow: hidden;
+        }
+
+        .inner {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            /* margin注意塌陷问题,所以在父元素添加了overflow: hidden;的属性
+               另外、下面的auto这样写,代表左右都是auto,效果是"水平方向的居中"
+               其中150px是 (outer的height400px - inner的height100px)/2=150px
+            */
+            margin: 150px auto;
+
+            /* 上面是不考虑有padding、border的情况,
+            如果有这两个属性,那么margin: 150px auto; 的150px就不对了,要重新计算
+            比如：
+            padding: 5px;
+            border: 5px solid red;
+            那么,margin就要去计算(考虑垂直方向)：outer盒子的大小是400px,inner的盒子大小是：100px+5px*2+5px*2=120px
+            所以,垂直方向outer和inner之间的空余有：400px-120px=280px,那么垂直居中的话,margin-top/bottom=280px/2=140px
+            即、
+            margin: 140px auto;
+            */
+
+            /* 设置文字"inner"水平和垂直居中 */
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">inner</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* vertical-align
+        1.属性名：vertical-align
+        2.作用：用于指定同一行元素之间、或表格单元格内文字的垂直对齐方式
+        3.常用值：
+          ① baseline(默认值)：使元素的基线与父元素的基线对齐
+          ② top：使用元素的顶部与其所在行的顶部对齐
+          ③ middle：使元素的中部与父元素的基线加上父元素字母x的一半对齐
+          ④ bottom：使元素的底部与其所在行的底部对齐
+
+        特别注意：vertical-align不能控制块元素
+        */
+
+        #d1 {
+            font-size: 100px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        span {
+            font-size: 40px;
+            background-color: orange;
+            /* vertical-align:用来设置子元素在当前行的垂直的位置, baseline是默认值,基线对齐 */
+            /* vertical-align: top; */
+            /* vertical-align: bottom; */
+            /* vertical-align: baseline; */
+            /* middle理解下...不是行的中间哦~~：指的是该span的中部与(父元素的基线+x的高度的一半：其实就是父元素的x的中部)高度一致 */
+            vertical-align: middle;
+            /* line-height: 300px; */
+        }
+
+        #d2 {
+            font-size: 50px;
+            /* height: 200px; */
+            background-color: orange;
+            vertical-align: center;
+            text-align: center;
+        }
+
+        img {
+            height: 50px;
+            /* vertical-align: top; */
+            vertical-align: middle;
+            /* vertical-align: bottom; */
+            /* vertical-align: baseline; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        atguigu尚硅谷x<span>x前端</span>
+    </div>
+    <hr>
+    <div id="d2">
+        atguigu尚硅谷x<img src="../picture1.jpg">
+    </div>
+
+</body>
+
+</html>

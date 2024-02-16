@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_CSS选择器优先级_简单聊</title>
+
+    <style>
+        /* ID选择器 > 类选择器 > 元素选择器 > 通配符选择器  相同选择器:"后来居上" */
+        /* 另外,如果在行内直接写样式style的话,那肯定是行内优先级最高,但是行内样式不涉及到选择器 */
+        #atguigu {
+            color: orange;
+        }
+
+        .slogan {
+            color: skyblue;
+        }
+
+        h2 {
+            color: gray;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        * {
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <h2 class="slogan" id="atguigu" style="color: blue;">尚硅谷,让填写没有难学的技术!</h2> -->
+    <h2 class="slogan" id="atguigu">尚硅谷,让填写没有难学的技术!</h2>
+
+</body>
+
+</html>

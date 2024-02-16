@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_结构伪类2</title>
+
+    <style>
+        /* 
+        总结： 
+        div>p:first-child、 :last-child、 :nth-child() 翻译成人话,就是: 这是我家老大、老幺、老(几), 不分男女哦。
+        举例就是: 你虽然是first-child,但不是男孩,不满足
+        div>p:first-of-type、 :last-of-type、 :nth-of-type() 翻译成人话,就是: 这是我大儿子、小闺女、二（儿子、闺女),有给定范围了(男或女)。
+        举例就是: 你是大儿子,虽然不是first-child,意思就是有个姐姐,但在男孩里面就是first-child。 
+        
+        div>p:first-child、 :last-child、 :nth-child(5) ---> 所有兄弟元素的第一个、最后一个、第5个
+        div>p:first-of-type、 :last-of-type、 :nth-of-type(5) ---> 所有同类型兄弟元素中的第一个、最后一个、第5个
+        */
+
+
+        /* div>p:first-child {
+            color: red;
+        }
+
+        div>p:last-child {
+            color: cadetblue;
+        } */
+
+        /* 结构1 
+        选中div的第3个儿子p元素 */
+        /* div>p:nth-child(3) {
+            color: blue;
+        } */
+
+        /* 结构2
+        div>p:nth-child() {}
+        ()里有非常多写法: 但是官方要求格式必须是: an+b (意思就是n-b是不允许的,这就解释了为什么是-n+5,而不能写成5-n)
+        所以,其实()内的写法,核心就是 n 的公式写法：
+        (1,2,3,...)：直接数字,表示取到第几个(从1开始)元素
+        (n)：表示所有元素
+        (2n)：表示取偶数的元素
+        (even): 表示取到偶数元素
+        (2n+1): 表示取到奇数元素
+        (odd)：表示取到奇数元素
+        (-n+5): 表示取到前5个元素---> -0+5, -1+5, -2+5, -3+5, -4+5, -5+5(到这就取不到了,因为是从1开始)
+        (3n+4): 直接算,就是选取 4,7,10这三个元素
+        */
+        /* div>p:nth-child(-n+5) {
+            color: red;
+        } */
+
+        /* 结构3
+        张三、钱九都是orange色...
+        */
+        div>p:first-of-type {
+            color: orange;
+        }
+
+        /* 钱九、十阿哥都是darkmagents色 
+        注意钱九, 它既是内层div的p标签的第一个也同时是最后一个,因为只有一个p标签...
+        */
+        div p:last-of-type {
+            color: darkmagenta;
+        }
+
+        /* 孙七是lawngreen色
+        div标签下p标签的第5个元素
+        */
+        div>p:nth-of-type(5) {
+            color: lawngreen;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 结构1 -->
+    <!-- <div>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+        <p>孙七: 58分</p>
+        <p>老八: 18分</p>
+    </div> -->
+
+    <!-- 结构2 -->
+    <!-- <div>
+        <p>第1个</p>
+        <p>第2个</p>
+        <p>第3个</p>
+        <p>第4个</p>
+        <p>第5个</p>
+        <p>第6个</p>
+        <p>第7个</p>
+        <p>第8个</p>
+        <p>第9个</p>
+        <p>第10个</p>
+    </div> -->
+
+    <!-- 结构3 -->
+    <div>
+        <span>测试1</span>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+        <p>孙七: 58分</p>
+        <p>老八: 38分</p>
+        <div>
+            <p>钱九: 18分</p>
+            <span>测试2</span>
+        </div>
+        <p>十阿哥: 8分</p>
+    </div>
+</body>
+
+</html>

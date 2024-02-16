@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 总结：浮动后会有哪些影响
+        1. 对兄弟元素的影响：后面的兄弟元素,会占据浮动元素之前的位置,即在浮动元素的下面;对前面的兄弟无影响
+        2. 对父元素的影响：不能撑起父元素的高度,导致父元素高度塌陷;但父元素的宽度依然束缚浮动的元素。
+        */
+
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+            /* float: left; */
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box box0">盒子0</div>
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <!-- <div class="box box4">盒子4</div> -->
+    </div>
+    <!-- <div style="background-color: orange;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis molestiae
+        magni possimus fugiat eius deserunt
+        officiis ad dolor enim non. Blanditiis, illo exercitationem. Eos, ex nihil culpa possimus et quam ab veritatis
+        numquam accusantium maxime? Tempore ducimus a sequi, ut iusto, eaque ipsa alias odio, sit eos hic nihil deleniti
+        deserunt veritatis necessitatibus dignissimos. Quibusdam obcaecati ut rerum, excepturi illum iste enim repellat
+        modi neque hic voluptas aliquam cupiditate magni earum nam magnam libero adipisci itaque at consequuntur est
+        repudiandae impedit maxime! Temporibus, aut voluptas dolor, ipsum nostrum eaque esse iste, nihil error culpa
+        doloremque sunt dicta quibusdam sint fuga?
+    </div> -->
+
+
+
+</body>
+
+</html>

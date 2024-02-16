@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32.框架标签</title>
+</head>
+
+<body>
+    <!-- 利用iframe嵌入一个普通网页 -->
+    <!-- frameborder的值要么 0 , 要么 1 -->
+    <!-- <iframe src="https://www.bilibili.com/" frameborder="0" width="900" height="500"></iframe> -->
+    <!-- <br> -->
+    <!-- <iframe src="https://www.iqiyi.com" frameborder="1" width="900" height="500"></iframe> -->
+    <!-- <br> -->
+
+    <!-- 利用iframe嵌入一个广告网页 -->
+    <!-- <iframe width="300" height="300"
+        src="https://nimg.ws.126.net/?url=http%3A%2F%2Fcms-bucket.ws.126.net%2F2023%2F1026%2Fecae26d7p00s34cl301a4c000u000f0c.png&thumbnail=300y180&quality=100&type=jpg"
+        frameborder="0"></iframe> -->
+    <!-- <br> -->
+
+    <!-- 利用iframe嵌入其他内容 -->
+    <!-- <iframe src="./path_test/音你心动.jpg" frameborder="0"></iframe> -->
+    <!-- <br> -->
+
+    <!-- 与超链接的target属性配合使用 -->
+    <a href="https://www.bilibili.com/" target="container">点我看哔站</a>
+    <a href="https://www.iqiyi.com" target="container">点我看爱奇艺</a>
+    <br>
+    <!-- 与表单的target属性配合使用 -->
+    <form action="https://so.toutiao.com/search" target="container">
+        <input type="text" name="keyword">
+        <button>头条的button按钮搜索</button>
+        <input type="submit" value="头条的input按钮type='submit'搜索">
+    </form>
+
+    <iframe name="container" frameborder="0" width="900" height="300"></iframe>
+    <!-- 这里关键的地方是 name="container", "container"是与上面的超链接或者表单中的属性值target关联的 -->
+</body>
+
+</html>

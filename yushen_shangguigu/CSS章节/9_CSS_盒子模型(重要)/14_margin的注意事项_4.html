@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #d1 {
+            width: 800px;
+            height: 400px;
+            background-color: deepskyblue;
+            padding: 20px;
+            /* 这边只是复习下border,别忘了 border-style属性: dashed solid等等,否则border没有效果 */
+            border: 10px red dashed;
+
+            /* margin-left、margin-right都有的话,那就居中 */
+            /* 能离左边多远就多远 */
+            margin-left: auto;
+            /* 能离右边多远就多远 */
+            margin-right: auto;
+            /* 如果看到这样的写法,应该能想出来吧~！ */
+            margin: 100px auto;
+        }
+
+        /* img是行内块元素,也是不独占一行,所以也是不会居中..... */
+        img {
+            margin: 0 auto;
+        }
+
+        /* span是行内元素,不独占一行,所以下面的设置margin: 0 auto; span元素不会水平居中 */
+        span {
+            background-color: purple;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">你好呀~~~~</div>
+    <img src="../picture1.jpg" alt="video">
+    <br>
+    <span>好好学习,天天向上</span>
+
+</body>
+
+</html>

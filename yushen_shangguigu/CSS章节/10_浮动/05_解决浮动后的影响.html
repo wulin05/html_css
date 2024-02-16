@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 这一节需要自己要清楚,我想要的效果：
+        1. 盒子4不能在盒子1的下面
+        2. 虽然盒子1,2,3浮动了,但是不要让父元素塌陷了,依然能撑起盒子1,2,3不浮动时的高度
+        */
+
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            /* 解决方案一(不太完美,因为没有解决效果1的问题：最后一个兄弟盒子4还是在盒子1底下) */
+            /* height: 122px; */
+            /* 解决方案二(不太好,带来其他影响) */
+            /* float: left; */
+            /* 解决方案三: 同样也是只是解决父元素塌陷的问题,但是依然没有解决盒子4的问题*/
+            /* overflow: hidden; */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        /* .box4是说明解决方案四,添加的,之前只有box1,box2,box3 */
+        .box1,
+        .box2,
+        .box3,
+        .box4 {
+            float: left;
+        }
+
+        /* 让box4变成行内块：行内块不独占一行(但保持块远山可以设置高度的特点)
+           这是最开始的地方,跟什么方案一、二、和下面的方案三没有关系~~
+        */
+        /* .box4 {
+            display: inline-block;
+            height: 249px;
+        } */
+
+        /* 解决方案四：比较完美,但是如果box4也学坏了,就像上面的并集(.box4也飘起来了),难道这边还要给一个不浮动的box5,设置clear: both;么？？
+        答案显然是"不", 只要给一个仅仅只有clear：both; 的div 就ok了 */
+        /* .box4 {
+            clear: both;
+        } */
+        /* 所以方案四的原理就是：给浮动元素的最后,添加一个块级元素,并给该块级元素设置clear: both  */
+        .mofa {
+            clear: both;
+        }
+
+        /* 给浮动元素的父元素,使用伪元素选择器,通过伪元素清除浮动,原理还是方案4：给浮动元素的最后加一个不浮动的、无内容的块级元素,设置clear：both; */
+        .outer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        /* 上面的什么方案一、二、....,都是一种奇葩的情况,明明在一个父div里的子div们,
+            非要既有浮动的，又有不浮动的,这就不是好的布局。
+            这样才会出现解决方案一、二、三不能解决的,实际是因为盒子1、盒子2、盒子3都是浮动的
+            而偏偏一个兄弟盒子4是不浮动的,导致方案一、二、三不完美。
+            如果盒子4也是浮动的话,方案一、二、三不就解决了么，还需要啥方案四、五~~
+            
+            所以：
+            布局的一个原则：设置浮动的时候,兄弟元素要么全都浮动,要么全都不浮动,就没那么多屁事
+        */
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+        <!-- <div class="mofa"></div> -->
+    </div>
+
+    <div style="background-color: orange;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio maiores veritatis consequuntur ipsa a totam,
+        ut est vitae fugiat expedita eum quae at nesciunt sequi ipsam ad sit molestiae voluptates!
+    </div>
+
+</body>
+
+</html>

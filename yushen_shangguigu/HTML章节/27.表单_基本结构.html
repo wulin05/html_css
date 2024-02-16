@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27.表单_基本结构</title>
+</head>
+
+<body>
+    <!-- action: 用于指定表单的提交地址 -->
+    <form action="http://www.baidu.com/s">
+        <input type="text" name="wd">
+        <button>搜索</button>
+    </form>
+    <hr>
+    <!-- atrget:用于控制表单提交后,如何打开页面,常用有_self(本窗口打开),_blank(新窗口打开)
+         method:用于控制表单的提交方式...
+    -->
+    <form action="https://search.jd.com/search" target="_self" method="get">
+        <!-- type:设置输入框的类型； name:用于指定提交数据的名字,需要和后端人员沟通后确定 -->
+        <input type="text" name="keyword">
+        <button>去京东搜索</button>
+    </form>
+    <hr>
+    <a href="https://search.jd.com/search?keyword=手机">搜索手机</a>
+
+</body>
+
+</html>

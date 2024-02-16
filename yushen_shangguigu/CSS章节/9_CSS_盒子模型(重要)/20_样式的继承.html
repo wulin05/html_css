@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        /* 这里主要是想通过下面的"内部样式"设置字体的三个属性,这三个属性能够继承,进而引入：
+        "样式的继承"的概念：
+        1. 有些样式会继承,元素如果本身设置了某个样式,就使用本身设置的样式;但如果本身没有设置某个样式,
+           会从父元素开始一级一级地继承(优先继承离得近的祖先元素)
+        
+        2. 会继承的CSS属性
+           字体属性、文本属性(除了vertical-align)、文字颜色 等
+
+        3. 不会继承的CSS属性
+            边框、北京、内边距、外边距、宽高、溢出方式 等
+
+        规律：能继承的属性,都是不影响布局的,简单说：都是和盒子模型没关系的。
+
+        还记得行内样式、内部样式、外部样式这三个概念吧~~~~~
+        */
+
+        #d1 {
+            height: 600px;
+            background-color: gray;
+            padding: 50px;
+        }
+
+        #d2 {
+            height: 400px;
+            background-color: orange;
+            /* 这个跟本节无关,只是我自己对之前学的回顾.... 
+            如果给子元素,而且这个d2不仅仅是第一个子元素,同时也是最后一个子元素,
+            那么,如果d1没有设置padding的值的话,想想,如果这边设置了margin的话,是不是会出现margin塌陷问题呢...答案是肯定的!!!
+            */
+            /* margin: 40px;
+            border: 20px red solid; */
+            padding: 50px;
+        }
+
+        #d3 {
+            height: 200px;
+            background-color: green;
+            /* 下面三个是调整字体
+            这三个可以放在d2,d1,设置再写一个元素选择器body,在body写这三个属性,d3的"你好呀~~~"也能继承.....
+            */
+            font-size: 30px;
+            color: purple;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 在1_初识CSS的25_CSS三大特性的提到过的,其中有一点: 继承 -->
+
+    <div id="d1">
+        <div id="d2">
+            <div id="d3" style="font-family: 隶书;">你好呀~~~</div>
+        </div>
+    </div>
+</body>
+
+</html>

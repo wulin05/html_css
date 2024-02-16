@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 首先要说明的是 元素之间的空白问题,是存在在行内元素、行内块元素, 而块元素是独占一行,不存在这个问题 */
+
+        div {
+            height: 300px;
+            background-color: gray;
+            /* 
+            父元素设置字体为0px,可以解决行内元素span、行内块元素img之间有空隙的问题, 
+            但是会把span的文字都弄没了,所以单独设置元素选择器span,给那3个span的文字设置字体大小 
+            */
+            font-size: 0px;
+        }
+
+        .s1 {
+            background-color: skyblue;
+        }
+
+        .s2 {
+            background-color: orange;
+        }
+
+        .s3 {
+            background-color: green;
+        }
+
+        span {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <span class="s1">人之初</span>
+        <span class="s2">性本善</span>
+        <span class="s3">性相近</span>
+        <hr>
+        <img src="../picture1.jpg" alt="">
+        <img src="../picture1.jpg" alt="">
+        <img src="../picture1.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

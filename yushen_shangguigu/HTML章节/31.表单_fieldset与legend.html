@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31.表单_fieldset与legend</title>
+</head>
+
+<body>
+
+    <!-- fieldset与legend的使用(了解即可)
+        fieldset可以为表单控件分组、legend标签是分组的标题
+     -->
+    <form action="https://search.jd.com/search">
+        <fieldset>
+            <legend>主要信息</legend>
+            <label for="zhanghu">账户:</label>
+            <input id="zhanghu" type="text" name="account" maxlength="10"><br>
+
+            <label>
+                密码:
+                <input type="password" name="pwd" maxlength="12">
+            </label>
+            <br>
+
+            性别:
+            <input id="nan" type="radio" name="gender" value="male">
+            <label for="nan">男</label>
+            <label>
+                <input type="radio" name="gender" value="female">
+                女
+            </label>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>附加信息</legend>
+            爱好:
+            <input id="chouyan" type="checkbox" name="hobby" value="smoke">
+            <label for="chouyan">抽烟</label>
+            <input id="hejiu" type="checkbox" name="hobby" value="drink">
+            <label for="hejiu">喝酒</label>
+            <label>
+                <input type="checkbox" name="hobby" value="perm">
+                烫头
+            </label>
+            <br>
+
+            其他:
+            <textarea name="other" cols="30" rows="3">请输入你想要输入的内容</textarea><br>
+
+            籍贯:
+            <select name="place">
+                <option value="粤">广东</option>
+                <option value="闽">福建</option>
+                <option value="江">浙江</option>
+                <option value="苏">江苏</option>
+            </select>
+        </fieldset>
+
+        <input type="hidden" name="from" value="toutiao">
+        <br>
+
+        <input type="submit" value="确认">
+
+        <input type="reset" value="点我重置">
+
+        <input type="button" value="检测账号是否被注册">
+
+
+    </form>
+</body>
+
+</html>

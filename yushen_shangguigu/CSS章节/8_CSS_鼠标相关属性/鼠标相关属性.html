@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
+            /* cursor,更改鼠标光标的样式
+            属性非常多: pointer,move,wait,crosshair,help 
+            也可以自定义,如下：
+            cursor: url("../images/arrow.png"),pointer;           
+            */
+            cursor: wait;
+        }
+
+        .clickme {
+            cursor: pointer;
+        }
+
+        input {
+            cursor: help;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        把鼠标放进来看一看
+        <input type="text">
+        <a href="https://www.baidu.com">百度一下</a>
+        <button class="clickme">点我</button>
+    </div>
+
+</body>
+
+</html>

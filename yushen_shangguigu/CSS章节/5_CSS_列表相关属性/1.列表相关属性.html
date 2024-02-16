@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        /* 列表符号 none square disc decimal lower-roman upper-roman (ul是无序列表,decimal虽然前面是序号,但是浏览器识别还是无序列表)  */
+        /* list-style-type: none; none是最常用的*/
+        /* 列表符号的位置 inside outside*/
+        /* list-style-position: outside; */
+        /* 自定义列表符号 */
+        /* list-style-image: url("./video3-1.jpg"); */
+        /* 复合属性 decimal是数字,但是url又是图片,最终是以最后一个为准 */
+        list-style: decimal inside url("./video3-1.jpg");
+
+        /* 复合属性可以写在ul,ol,li里,其他不可以 */
+    }
+
+    li {
+        background-color: orange;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>《震惊!两男子竟然在教室做出这种事》</li>
+        <li>《一夜暴富指南》</li>
+        <li>《给成功男人的五条建议》</li>
+    </ul>
+</body>
+
+</html>

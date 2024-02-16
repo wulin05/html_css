@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_伪类选择器_动态伪类</title>
+
+    <style>
+        /* 关于动态伪类: link、visited、hover、active ==> 遵循lvha的顺序
+        1. 不要改变它们的先后顺序
+        2. link和visited是a标签特有的属性
+        3. hover和active是所有标签都具有的属性       
+        */
+
+        /* :link 超链接违背访问的状态：意思就是说,没有访问过的a标签元素,颜色是orange */
+        a:link {
+            color: orange;
+        }
+
+        /* :visited 超链接访问过的状态: 意思就是说,访问过的a标签元素,颜色是gray */
+        a:visited {
+            color: gray;
+        }
+
+        /* :hover 鼠标悬浮在元素上的状态 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /* :active 元素激活的状态 */
+        a:active {
+            color: green;
+        }
+
+
+        /* 举例,span标签也有hover和active的属性 
+        悬浮到"我是superman" 的时候是 skyblue, 点击时是 green, 松开鼠标并不悬浮在"我是superman"是 黑色
+        */
+        span:hover {
+            color: red;
+        }
+
+        span:active {
+            color: green;
+        }
+
+        /* :focus 获取焦点的元素 */
+        input:focus,
+        select:focus {
+            /* 只有表单类的元素才能使用 :focus伪类,例如input、select 
+               当用户: 点击元素、触摸(悬浮)元素、或通过键盘的"tab"键等方式,选中元素时,就是获得焦点
+            */
+            color: orange;
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="https://www.yahoo.com">去雅虎</a>
+    <a href="https://www.iqiyi.com">去爱奇艺</a>
+    <br>
+    <span>我是superman</span>
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <select name="city" id="">
+        <option value="beijing">北京</option>
+        <option value="tianjin">天津</option>
+        <option value="shanghai">上海</option>
+        <option value="chongqing">重庆</option>
+    </select>
+
+
+
+</body>
+
+</html>

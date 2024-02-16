@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 布局的小技巧
+        1. 行内元素、行内块元素,可以被父元素当做文本处理
+           即：可以像处理文本对齐一样,去处理：行内、行内块在父元素中的对齐
+           例如： text-align、line-height、text-indent 等
+
+        2. 如何让子元素,在父亲中 水平居中：
+           若子元素为块元素,给父元素加上：margin：0 auto;
+           若子元素为行内元素、行内块元素,给父元素加上：text-align：center
+        
+        3. 如何让子元素,在父亲中 垂直居中：
+           若子元素为块元素,给子元素加上：margin-top,值为：(父元素content - 子元素盒子总高) / 2
+           若子元素为行内元素、行内块元素：
+           ① 让父元素的height = line-height, 每个子元素都加上： vertical-align: middle;
+           ② 补充：若想绝对垂直居中,父元素font-size设置为0
+        */
+
+        .outer {
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            text-align: center;
+            line-height: 400px;
+            /* font-size: 0px; */
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        span {
+            font-size: 40px;
+            vertical-align: middle;
+            /* line-height: 400px; */
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <span>你好呀~~x</span>
+        <img src="../picture1.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

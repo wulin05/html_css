@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 关于列表使用的注意事项
+    1.如果想要在列表中使用其他标签,先用<li></li>包裹起来: 会破坏原先的列表结构
+    2.不要单独使用<li></li>,不明确的结构
+    3.列表的嵌套
+    -->
+
+    <!-- 有序列表Ordered list(ol)、无序列表Unordered list(ul)、自定义列表Definition list(dl)、列表项list item(li) -->
+    <h2>要把大象放冰箱拢共分几步？</h2>
+    <ol>
+        <li>把冰箱打开</li>
+        <li>把大象放进去</li>
+        <li>把冰箱关上</li>
+        <!-- <a href="https://www.baidu.com"></a>  不要直接a标签这么放进去,会破坏列表结构 -->
+        <li>
+            <a href="https://www.baidu.com">去百度</a>
+        </li>
+    </ol>
+
+    <ul>
+        <li>我想去的几个城市(列表嵌套的方式)</li>
+        <li>北京</li>
+        <li>
+            <!-- 使用span标签: 用来包裹文字的,没有任何语义 -->
+            <span>上海</span>
+            <ul>
+                <li>
+                    <span>外滩</span>
+                    <ul>
+                        <li>xxx</li>
+                        <li>yyy</li>
+                    </ul>
+                </li>
+                <li>陆家嘴</li>
+                <li>迪尼斯</li>
+            </ul>
+        </li>
+        <li>成都</li>
+        <li>内蒙古</li>
+    </ul>
+
+    <h2>如何更好地学习</h2>
+    <!-- 自定义列表,主要是为了突出"术语名称"和"术语描述 -->
+    <dl>
+        <!-- dt: defined title; dd: defined description -->
+        <dt>做好笔记</dt>
+        <dd>笔记是我们以后复习的抓手</dd>
+        <dd>笔记可以是电子版,也可以是纸质版</dd>
+
+        <dt>多加练习</dt>
+        <dd>只有敲出来的代码,才是自己的</dd>
+
+        <dt>别怕出错</dt>
+        <dd>错很正常,改正后并记住,就是经验</dd>
+
+    </dl>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_CSS选择器优先级_详细聊</title>
+
+    <style>
+        #atguigu1 {
+            color: orange;
+        }
+
+        .container span.slogan1 {
+            color: red;
+        }
+
+        div>p>span:nth-child(1) {
+            color: green;
+            font-size: 28px;
+        }
+
+        /* #atguigu2 {
+            color: chocolate;
+        } */
+
+        /* .container span.slogan2 表示类选择器class=container的后代为元素选择器span,并且span的class=slogan2的元素 */
+        .container span.slogan2 {
+            color: skyblue;
+        }
+
+        /* .container .slogan2 表示类选择器class=container 后代为类选择器class=slogan2的元素 */
+        .container .slogan2 {
+            color: blue;
+        }
+
+        div>p>span:nth-child(2) {
+            color: yellow;
+            font-size: 28px;
+        }
+
+        .slogan1 {
+            /* !important 宇宙最无敌,行内样式style都干不过它！！！ 
+            但是记住,不是 类slogan 变的很厉害,是类slogan的color属性变得很厉害,
+            那么意思就是：如果slogan类选择器中还有 font-size属性,font-size也是计算 "权重" 哦~~~
+            */
+            color: purple !important;
+            font-size: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>
+            <span class="slogan1" id="atguigu1" style="color: blue;">尚硅谷,让天下没有难学的技术!</span>
+            <span class="slogan2" id="atguigu2">尚硅谷,让天下没有难学的技术!</span>
+            <span>欢迎来学习前端技术~</span>
+        </p>
+    </div>
+
+</body>
+
+</html>

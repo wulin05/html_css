@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素显示模式转换</title>
+    <style>
+        a {
+            width: 150px;
+            height: 50px;
+            background-color: pink;
+            /* 标签a本身是行内元素, 但比较特殊,可以放块级元素,但是最好还是转换一下块级模式比较安全: display: block */
+            display: block;
+        }
+
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: purple;
+            /* 把 div 块级元素转换为行内元素, 这时候上面设置的宽度、高度都没有效果了。*/
+            display: inline;
+        }
+
+        span {
+            width: 300px;
+            height: 30px;
+            background-color: skyblue;
+            /* span是行内元素,转换为行内块元素后,就兼具块元素的特点了 */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">金星阿姨</a>
+    <a href="#">金星阿姨</a>
+    <div>我是块级元素</div>
+    <div>我是块级元素</div>
+    <span>行内元素转换为行内块元素</span>
+    <span>行内元素转换为行内块元素</span>
+</body>
+
+</html>

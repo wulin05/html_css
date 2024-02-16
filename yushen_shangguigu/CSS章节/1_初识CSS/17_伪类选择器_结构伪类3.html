@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_结构伪类2</title>
+
+    <style>
+        /* 
+            结构1
+        */
+        /* 选中div中倒数第4个的儿子p元素(所有兄弟): 孙七 */
+        /* div>p:nth-last-child(4) {
+            color: gold;
+        } */
+
+        /* 选中div中倒数第2个的儿子p元素(同类型p): 老八 */
+        /* div>p:nth-last-of-type(2) {
+            color: skyblue;
+        } */
+
+        /* 
+            结构2
+        */
+        /* only-child span是div的独生子; 只有测试1满足 */
+        span:only-child {
+            color: blueviolet;
+        }
+
+        /* only-of-type 类型中唯一; 测试1和测试2都满足; span标签元素"测试2"虽然不是div标签下的独生子,但是是唯一的span类型,所以ok */
+        span:only-of-type {
+            color: coral;
+        }
+
+        /* 选中的html根元素  其实就是整个html页面 */
+        :root {
+            background-color: gray;
+        }
+
+        /* 选中的是没有内容的div元素  结构3中必须是连空格都没有,如果有空格,就不是empty, div:empty就匹配不上了 */
+        div:empty {
+            /* 虽然没有内容,是空的,但是可以通过样式来撑起这块区域 */
+            width: 500px;
+            height: 200px;
+            background-color: darkblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 结构1 -->
+    <!-- <div>
+        <span>测试1</span>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+        <p>孙七: 58分</p>
+        <p>老八: 38分</p>
+        <div>
+            <p>钱九: 18分</p>
+            <span>测试2</span>
+        </div>
+        <p>十阿哥: 8分</p>
+    </div> -->
+
+    <!-- 结构2 -->
+    <div>
+        <span>测试1</span>
+    </div>
+    <div>
+        <span>测试2</span>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+        <p>孙七: 58分</p>
+        <p>老八: 38分</p>
+    </div>
+
+    <!-- 结构3 -->
+    <div></div>
+
+</body>
+
+</html>

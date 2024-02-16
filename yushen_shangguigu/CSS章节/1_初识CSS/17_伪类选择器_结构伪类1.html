@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_结构伪类1</title>
+
+    <style>
+        /* 结构伪类1 */
+        /* 由于div中的学生成绩是从高往低顺序显示,
+        需求：学生成绩会变动,但是只有第一个(也就是第一名)才会是红色
+        其实就是: 选中div的第一个儿子p元素(标签),通俗地说：div的大儿子
+        */
+        /* div>p:first-child {
+            color: red;
+        } */
+
+        /* 结构伪类2 */
+        /* 注意:
+        div>span:first-child {} 还能取到span对应的标签元素
+        div>p:first-child {} 这个对应结构2是取不到元素的
+        但是这里的目的不是为了说明,要把p改成span,是告诉这么个情况：
+        张三虽然是first-child,但是不是p标签; 李四虽然是p标签,但是不是first-child....
+        */
+        /* div>p:first-child {
+            color: red;
+        } */
+
+        /* 结构伪类3-1 */
+        /* 情况1：
+        同样没有起到作用,道理和第二种情况差不多
+        */
+        /* div>p:first-child {
+            color: red;
+        } */
+
+        /* 结构伪类3-2
+        但是如果我是这么写: 
+        那么结构3-2的 测试1和测试2 的颜色是红色的......
+        div>p(子代选择器) 和 div p(后代选择器) 的区别就明白了
+        */
+        /* 核心点: div后代中,不管父亲是谁,只要这个p标签是first-child(大儿子),  */
+        /* div p:first-child {
+            color: red;
+        } */
+
+        /* 或者这种写法 那么测试1、测试2、测试3都是红色了 */
+        p:first-child {
+            /* 核心点: 不管是谁的后代了,只要p标签在后代中的身份是first-child(大儿子)就行 */
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 结构1 -->
+    <!-- <div>
+        <p>孙七: 100分</p>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+    </div> -->
+
+    <!-- 结构2 -->
+    <!-- <div>
+        <span>张三: 98分</span>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+    </div> -->
+
+    <!-- 结构3-1 -->
+    <!-- <div>
+        <marquee>
+            <p>张三: 98分</p>
+        </marquee>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+    </div> -->
+
+    <!-- 结构3-2 -->
+    <p>测试3</p>
+    <div>
+        <p>测试1</p>
+        <marquee>
+            <p>测试2</p>
+        </marquee>
+        <p>张三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>赵六: 68分</p>
+    </div>
+
+</body>
+
+</html>

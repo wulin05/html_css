@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>29.表单_禁用表单控件</title>
+</head>
+
+<body>
+
+    <form action="https://search.jd.com/search">
+        <!-- 输入框不需要,会将用户输入数据收集 account="用户输入的账户"-->
+        账户: <input disabled type="text" name="account" value="请输入账户" maxlength="10"><br>
+        密码: <input disabled type="password" name="pwd" maxlength="12"><br>
+
+        <!-- 单选框 radio 
+        不管是单选框还是复选框都要有name、value属性,url收集到的格式是：name=value,比如 gender=male; hobby=smoke
+        -->
+        性别:
+        <input type="radio" name="gender" value="male" checked>男
+        <input disabled type="radio" name="gender" value="female">女<br>
+
+        <!-- 复选框 checkbox 
+        disabled不用在"抽烟"这个复选框上,是因为"抽烟"已经有checked,用上disabled就乱了....
+        -->
+        爱好:
+        <input type="checkbox" name="hobby" value="smoke" checked>抽烟
+        <input disabled type="checkbox" name="hobby" value="drink">喝酒
+        <input type="checkbox" name="hobby" value="perm">烫头<br>
+
+        <!-- 文本域 -->
+        <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+        <!-- 不能编写type属性, id暂时不需要, cols表示列数(控制宽), rows表示行数(控制高) -->
+        其他:
+        <textarea disabled name="other" cols="30" rows="3">请输入你想要输入的内容</textarea><br>
+
+        <!-- 下拉选择列表 -->
+        <!--
+            name 属性: 指定数据的名称,也就是 place=value值,value值是在option标签设置的 
+            如果option中有定义了value值,那么选中那个option,那么url会将该option对应的value值赋给place,即：
+            place="闽", 
+            如果option中没有定义value值,那么：
+            place="福建"
+            
+            ***** 注意理解哦           
+        -->
+        籍贯:
+        <select disabled name="place">
+            <option disabled value="粤">广东</option>
+            <option value="闽" selected>福建</option>
+            <option value="江">浙江</option>
+            <option value="苏">江苏</option>
+        </select>
+
+        <!-- 隐藏域 
+             同理,url收集到的数据是: from="toutiao" 
+        -->
+        <input type="hidden" name="from" value="toutiao">
+        <br>
+
+        <!-- 确认按钮 -->
+        <!--
+            第一种写法 button默认的type="submit"
+            第二种写法 input必须给 type="submit", 因为input默认的type="text"  
+            不管是button还是input这两种构成的按钮,都不需要name属性,按钮本身是不需要通过url给后端提供数据的 
+        -->
+        <button disabled type="submit">确认</button>
+        <!-- 确认按钮_第二种写法 -->
+        <input disabled type="submit" value="确认">
+
+        <!-- 重置按钮 -->
+        <!-- 写法一: -->
+        <button disabled type="reset">重置</button>
+        <!-- 写法二 -->
+        <input disabled type="reset" value="点我重置">
+
+        <!-- 普通按钮
+        同样两种写法:
+        点击按钮后,表单不提交,不重置,就是普通按钮,但是需要后续学js等内容才可以实现具体的检测功能 -->
+        <button disabled type="button">检测账号是否被注册</button>
+        <input disabled type="button" value="检测账号是否被注册">
+
+
+    </form>
+</body>
+
+</html>

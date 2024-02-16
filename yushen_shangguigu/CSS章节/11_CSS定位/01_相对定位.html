@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 说到最后,相对定位的应用场景
+        1. 对自身微调,你可以想象它是一个小心翼翼的人,生怕影响别人
+        2. 绝大多数情况,与下一节的绝对定位配合使用(CP)
+        */
+
+        .outer {
+            width: 500px;
+            background-color: skyblue;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            font-size: 30px;
+        }
+
+        .box1 {
+            background-color: #888;
+        }
+
+        .box2 {
+            background-color: aqua;
+            /* 给box2开启相对定位 position: relative; 然后通过top,bottom,left,right调整位置, 记住是与之前的位置对比
+            另外, 开了定位的元素的层级要高于普通没有开定位的元素,不会脱离文档流(浮动是脱离了文档流~)
+            box2和box3都开了定位的话,后面的一个"骑到前面的一个脖子上"---后者居上....
+            ~ */
+            position: relative;
+            /* left: 400px */
+            /* right: 100px; */
+            /* top: 50px; */
+            bottom: -50px;
+
+            /* 开启定位的元素,依然可以设置margin,以及设置浮动 --->但是极度不推荐这么做!!!  */
+            /* margin-left: 50px;
+            float: left; */
+        }
+
+        .box3 {
+            background-color: purple;
+            position: relative;
+            top: -50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+
+</html>

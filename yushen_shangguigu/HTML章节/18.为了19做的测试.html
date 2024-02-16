@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 在35章后,在这边关于meta的一些功能说明 
+    更多meta详情,请查询MDN: https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta
+    -->
+
+    <meta charset="UTF-8">
+
+    <!-- 针对IE浏览器的一个兼容性设置 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 针对移动端的配置: 适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 配置网页的关键字 -->
+    <meta name="keyword" content="网上购物,电商平台,皮鞋,化妆品">
+    <title>meta元信息</title>
+
+    <!-- 配置网页描述信息 -->
+    <meta name="description" content="哈哈购物网成立于2003年,致力于打造国内的优质电商平台。(描述网站信息,不超过80个字)">
+
+    <!-- 针对搜索引擎爬虫配置 content=""选项很多,具体如下:
+    index: 允许搜索爬虫索引此页面
+    noindex: 要求搜索爬虫不索引此页面
+    follow: 允许搜索爬虫跟随此页面上的链接
+    nofollow: .....
+    all: 与index, follow等价
+    none： 与noindex, nofollow等价
+    noarchive: 要求搜索引擎不缓存页面内容
+    nocache: noarchive的替代名称
+    -->
+    <meta name="robots" content="index">
+
+    <!-- 配置网页作者 -->
+    <meta name="author" content="linwu">
+
+    <!-- 配置网页生成工具 -->
+    <meta name="generator" content="Visual Studio Code">
+
+    <!-- 配置定义网页版权信息 -->
+    <meta name="copyright" content="2023-2027©版权所有">
+
+    <!-- 配置网页自动刷新 -->
+    <!-- 如果content中不写url,就代表当前网页每3秒刷新.... -->
+    <meta http-equiv="refresh" content="3;url=http://www.baidu.com">
+
+    <title>包含meta的功能...</title>
+
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./19.超链接_跳转锚点.html#txdd">看19页面的铁血都督</a>
+
+    <p>我是海军大将</p>
+    <img src="./path_test/海军大将.jpg" alt="海军大将">
+
+    <p id="zazs">我是真爱至上</p>
+    <img src="./path_test/真爱至上.jpg" alt="真爱至上">
+
+    <p>我是一只赤焰</p>
+    <img src="./path_test/赤莲之焰.jpg" alt="赤莲之焰">
+
+    <p>我是铁血都督</p>
+    <img src="./path_test/铁血都督.jpg" alt="铁血都督">
+
+</body>
+
+</html>

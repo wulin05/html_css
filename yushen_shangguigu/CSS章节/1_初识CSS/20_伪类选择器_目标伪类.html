@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_目标伪类</title>
+
+    <style>
+        div {
+            background-color: gray;
+            height: 200px;
+        }
+
+        div:target {
+            background-color: green;
+        }
+
+        p:target {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 前面锚点的知识 这边做复习,但是本节重点是要介绍："目标伪类"
+    实现的目标是: 当点击跳转到那个的时候,目标背景颜色变为想要的颜色
+    :target  选中锚点指向的元素
+    -->
+
+
+    <!-- 通过div的id做给a标签的href属性做锚点,这样点击 "去看第一个" 就能调到下面的 "第一个" 的位置 -->
+    <a href="#one">去看第一个</a>
+    <a href="#two">去看第二个</a>
+    <a href="#three">去看第三个</a>
+    <a href="#four">去看第四个</a>
+    <a href="#five">去看第五个</a>
+    <a href="#six">去看第六个</a>
+
+    <!-- 这个只是为了想说明, p标签没有name属性(还是name属性不起作用,不确定),
+    是通过上一行的a标签做锚点,这边点击就能定位到 "测试用1", 但实际是定位到 <a name="ztest1"></a>
+    -->
+    <a href="#ztest1">去看 测试用1</a>
+
+    <!-- 这个就是直接使用p标签的id属性, a标签的href就能通过p标签的id属性,获取锚点,进行跳转... -->
+    <a href="#ztest2">去看 测试用2</a>
+
+
+
+
+    <!-- 好像用div的name属性起不到锚点的作用,我不确定div是不是有name属性 -->
+    <div id="one">第一个</div>
+    <br>
+    <div id="two">第二个</div>
+    <br>
+    <div id="three">第三个</div>
+    <br>
+    <div id="four">第四个</div>
+    <br>
+    <div id="five">第五个</div>
+    <br>
+    <div id="six">第六个</div>
+
+    <!-- p标签没有name属性,所以可以通过a标签的name属性做锚点, 
+    注意注意,最终是定位到 <a name="ztest1"></a> 这个位置,
+    所以会发现 CSS的 p:target {},点击跳转后, 测试用2会变yellow; 测试用1没有效果,因为是锚点到 <a name="ztest1"></a> 这个位置。
+    -->
+    <a name="ztest1"></a>
+    <p>测试用1</p>
+
+    <!-- p标签有id属性,所以也可以直接通过本身的id属性做锚点 -->
+    <p id="ztest2">测试用2</p>
+
+
+
+</body>
+
+</html>

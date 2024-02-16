@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer {
+            /* 这个width和height是盒子的content区的大小 */
+            width: 400px;
+            height: 400px;
+            background-color: gray;
+            /* 加了内边距padding后,心里就应该有预判了,盒子大小是500px */
+            padding: 50px;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            /* 重点在这里: 
+            子元素inner是在父元素outer的内容区的,相当于父元素的content区是子元素的视口(浏览器)
+            所以,子元素设置的margin: 100px, 表明子元素inner盒子在父元素outer内容区content里,距离父元素outer内容区content的边界是100px。
+            */
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>

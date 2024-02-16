@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 先说下浮动设计的初衷: 文字环绕图片或者文字环绕文字的效果 */
+
+        div {
+            width: 600px;
+            height: 400px;
+            background-color: skyblue;
+        }
+
+        img {
+            width: 300px;
+            /* 启用图片的浮动功能 */
+            float: right;
+            /* 这个只是为了不让字体那么靠近图片而已 */
+            margin: 5px;
+        }
+
+        .test::first-letter {
+            font-size: 60px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../1_初识CSS/path_test/音你心动.jpg" alt="音你心动">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor mollitia, nam consectetur incidunt laudantium at
+        vel nulla accusantium fugiat deserunt! Odit temporibus eos facere, sunt veritatis quisquam animi accusamus
+        molestias reiciendis! Explicabo, voluptate et. Alias adipisci cupiditate qui modi iste? Qui natus nam nostrum
+        quos accusantium voluptate laboriosam consequuntur, velit dolorem sint odit dignissimos consequatur, quibusdam
+        id? Enim facilis, ipsam nam tenetur quo illo. Quibusdam tenetur rerum reprehenderit fugit architecto placeat
+        iure corporis blanditiis eum mollitia autem quam, illum voluptatem quasi aut totam quod, optio repellendus
+        eveniet magni culpa recusandae rem. Accusantium laboriosam nostrum rerum excepturi officiis dolores repudiandae
+        odit?
+    </div>
+    <hr>
+    <div class="test">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus cupiditate doloribus quibusdam quasi fugit
+        officiis odio adipisci pariatur earum, dolorem deserunt et? Beatae enim similique animi ipsam modi, temporibus
+        quos impedit cum maxime in autem alias quisquam praesentium optio velit culpa molestias deleniti perspiciatis
+        voluptas! Sapiente, excepturi quos, dicta, aut nostrum eius sint ducimus eaque asperiores consequatur porro
+        incidunt autem? Incidunt voluptate officiis vero! Veniam maiores ut impedit alias velit nisi, ullam, perferendis
+        ipsa nemo dolorum expedita, aut saepe porro pariatur natus temporibus voluptate dolores tempore ea nesciunt
+        soluta consequuntur tenetur? Dolorum ratione voluptatem soluta dolor quos quae quam. Beatae?
+    </div>
+</body>
+
+</html>

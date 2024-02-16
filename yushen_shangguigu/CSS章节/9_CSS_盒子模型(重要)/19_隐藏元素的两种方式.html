@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1 {
+            background-color: skyblue;
+            /* 隐藏方式一 display：默认值是none,不但看不见,也不占用任何位置,没有大小宽高,彻底隐藏 */
+            /* display: none; */
+            /* 隐藏方式二 visibility：默认属性是show,如果是hidden,元素隐藏,但还占有原来的位置 */
+            visibility: hidden;
+        }
+
+        .box2 {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            background-color: skyblue;
+            /* 方法三：让字体大小变成0px,同样如果行内块内部还有 */
+            font-size: 0px;
+        }
+
+        img {
+            width: 150px;
+            /* 方法一： */
+            /* vertical-align: middle; */
+            /* 方法二：将img的显示模式变成块元素,但是也是有个前提,img后面不能有东西了,后面的东西会跑到下一行 */
+            /* display: block; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <img src="../picture1.jpg" alt="camera">xg
+    </div>
+    <!-- 上面目前为止,注意看图片的下面有一行很小的空白,就叫"幽灵空白",特地加了文字xg,注意看,可能就更好明白下面我说的内容了~
+    造成这个原因就是：行内块元素与文本的基线对齐,而文本的基线与文本最底端之间是有一定距离的。 
+    解决办法：
+    直接就给img添加 vertical-align：top、bottom、middle..;的属性,但就是不能用baseline的值,因为baseline就是基准线呢,而且是vertical-align的默认值！
+    这里有个前提说法,图片比文字大,所以调整图片的vertical-align,其实是在调整文字的垂直方向的上、中、下移动,图片就占满整个块元素了
+    但是如果文字比图片还大,那也就不存在"幽灵空白"的问题了,所以,出现"幽灵空白"就是在
+    -->
+</body>
+
+</html>

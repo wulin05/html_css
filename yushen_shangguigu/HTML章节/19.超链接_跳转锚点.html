@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- a标签的href属性是超链接 -->
+    <a href="#htl">看真爱至上</a>
+    <a href="#txdd">看铁血都督</a>
+    <a href="./18.为了19做的测试.html#zazs">看18页面的真爱至上</a>
+
+    <p>我是海军大将</p>
+    <img src="./path_test/海军大将.jpg" alt="海军大将">
+
+    <!-- a标签name属性可以做锚点,由于p标签没有name属性,所以只能用id属性作为 "锚点" -->
+    <!-- 这里在网页内,会因为下面的锚点占据一行,虽然没有任何显示.... -->
+    <a name="htl"></a>
+    <p>我是真爱至上</p>
+    <img src="./path_test/真爱至上.jpg" alt="真爱至上">
+
+    <p>我是赤莲之焰</p>
+    <img src="./path_test/赤莲之焰.jpg" alt="赤莲之焰">
+
+    <!-- p标签使用id属性可以作为 "锚点",建议id不要使用数字开头 -->
+    <p id="txdd">我是铁血都督</p>
+    <img src="./path_test/铁血都督.jpg" alt="铁血都督">
+
+    <p>整体介绍完毕</p>
+    <a href="#">回到顶部</a>
+    <a href="">刷新页面</a>
+    <a href="javascript:alert(666);">点我弹窗</a>
+
+</body>
+
+</html>

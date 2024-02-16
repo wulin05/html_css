@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 这里说明下,border的属性不仅仅是表格table、th、td可以写,其他标签也可以写,比如后面的盒子模型的组成部分div */
+        /* 另外,设置边框border,至少要明确写出边框的样式(实线、虚线、圆点...等等), 而边框的颜色默认黑色,厚度3px
+            这里有个小知识: 如果电脑开了缩放,由于默认是3px,如果是缩放125%,那么f12显示border-width是2.4px,因为2.4*125%=3px
+        */
+
+        table {
+
+            /* border-width: 2px;
+            border-color: green; 也可以是transparent,意思就是颜色是透明的
+            border-style: solid dashed dotted double; */
+
+            /* 复合属性,其实就是用border 就能把所有属性都写上 */
+            border: 2px green solid;
+        }
+
+        th,
+        td {
+            border: 2px orange solid;
+        }
+
+        h2 {
+            border: 3px red dashed;
+        }
+
+        span {
+            border: 5px purple dotted;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>边框相关的属性,不仅仅是表格能用,其他元素也能用</h2>
+    <span>你也要设定边框属性呀~~~</span>
+    <hr>
+    <table>
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>19</td>
+                <td>女</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>王五</td>
+                <td>20</td>
+                <td>男</td>
+                <td>群众</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>赵六</td>
+                <td>21</td>
+                <td>女</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>陆七</td>
+                <td>22</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

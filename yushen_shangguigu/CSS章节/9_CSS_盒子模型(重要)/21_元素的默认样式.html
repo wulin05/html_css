@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1 {
+            font-size: 30px;
+            color: green;
+        }
+
+        a {
+            color: goldenrod;
+            text-decoration: none;
+            cursor: help;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        <!-- 超链接a标签,浏览器是默认有对超链接a标签做了默认样式(有字体颜色的属性),
+            所以,虽然上面写的内部样式#d1的字体color属性,这是父元素div的样式,CSS虽然有继承的功能,
+            但是"继承"的优先级是"最低"的,比不上浏览器默认样式的优先级,所以被浏览器的默认样式顶替了。
+            故,a标签的"去百度"这个字体颜色是不会变成green的,还是浏览器默认给的默认字体颜色,如下：
+            a:-webkit-any-link {
+                    color: -webkit-link;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+            所以,如果想要修改a标签的字体颜色(或其他样式),如果浏览器已经给过了的样式,那么,就不能再在#d1这个父元素的样式
+            中去修改,是不起作用的,这时候就要明确对a标签设置样式了~~。 如果不了解以上内容,再翻下这个视频看下!!!
+        -->
+        <a href="https://www.baidu.com">去百度</a>
+        <span>你好呀~~</span>
+
+
+        <!-- 
+            下面是关于哪些标签具有默认样式:
+            <h1>~<h2>~<h6>: 文字加粗、文字大小、上下外边距
+            <p>：上下外边距
+            <ul>、<ol>：左内边距
+            <a>：下划线、字体颜色、鼠标小手
+            <body>：8px外边距(4个方向) -------/> 重要~~~,上面的其他了解即可。
+            这就解释了,为什么给div设置背景颜色的时候,不能铺满整行,四边都有微小的没有背景的空余,原因就在此。
+            所以,如果要修改,同样的道理,可以设置内部样式：
+            body {
+                margin：0;
+            }
+
+
+        优先级：元素默认样式 > 继承样式, 所以如果要重置元素的默认样式,选择器一定要直接选择器到该元素!!!
+         -->
+        <hr>
+        <h1>一级标题</h1>
+        <h2>二级标题</h2>
+        <hr>
+        <p>我是一个段落</p>
+        <hr>
+        <ul>
+            <li>张三</li>
+            <li>李四</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

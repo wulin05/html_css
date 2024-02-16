@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 属性选择器 
+        格式: [] {} 
+        注意: 与之前的基本选择器: 通配符、元素(标签)、类、id选择器格式不同
+        */
+
+        /* 写法一: 选中具有title属性的元素,即,只要有title属性都算 */
+        [title] {
+            color: red;
+        }
+
+        /* 写法二：选中具有title属性,且属性值为"guigu3"的元素 */
+        [title="guigu3"] {
+            color: green;
+        }
+
+        /* 写法三：选中具有title属性,且属性值以"fu"开头的元素 */
+        [title^="fu"] {
+            color: blueviolet;
+        }
+
+        /* 写法四：选中具有title属性,且属性值以"tou"结尾的元素 */
+        [title$="tou"] {
+            color: chocolate;
+        }
+
+        /* 写法五：选中具有title属性,且属性值包含"an"的元素 */
+        [title*="an"] {
+            color: hotpink;
+        }
+
+        /* 这里做一个说明
+        虽然[]内可以用class属性,或者id属性,但是明显class和id就有自己的写法,没必要这样用
+        所以,属性选择器是对于除了class、id,比如title这种属性的,可以这么用
+        */
+        /* 虽然属性选择器可以对class属性这么写,但不用 */
+        [class="xxx"] {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div title="atguigu1">尚硅谷1</div>
+    <div title="atguigu2">尚硅谷2</div>
+    <div title="guigu3">尚硅谷3</div>
+
+    <div title="fuzhou">福州</div>
+    <div title="fuqing">福清</div>
+
+    <div title="chengtou">城头</div>
+
+    <div title="fengshan">凤山</div>
+
+</body>
+
+</html>

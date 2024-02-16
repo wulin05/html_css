@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 兄弟选择器: 1.相邻兄弟选择器 2.通用兄弟选择器 */
+
+        /* div+p:表示div标签后紧紧相邻的兄弟h3标签(睡在下铺的哥们): 相邻兄弟选择器 */
+        div+h3 {
+            color: red;
+        }
+
+        /* div~p:表示div标签后所有的兄弟p标签(睡在我下铺的所有兄弟): 通用兄弟选择器 */
+        div~p {
+            color: green;
+        }
+
+        /* li~li {
+            color: orange;
+        } */
+        li+li {
+            color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>div标签之上的p标签,没有效果</p>
+    <div>尚硅谷</div>
+    <h3>div+h3:{}的CSS相邻兄弟选择器的效果</h3>
+    <h1>前端</h1>
+    <p>Java</p>
+    <p>大数据</p>
+    <p>UI</p>
+
+    <ul>
+        <li>主页</li>
+        <li>秒杀</li>
+        <li>订单</li>
+        <li>我的</li>
+
+    </ul>
+</body>
+
+</html>

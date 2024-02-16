@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            /* 设置了margin,本应该第一个的top和最后一个的bottom导致塌陷,但是父元素有border */
+            margin: 10px;
+            /* 所有盒子都浮动起来了,那么父亲元素由于没有内容了,就剩下border,背景都没了 */
+            float: left;
+        }
+
+        .box1 {
+            /* 情况一、盒子1跑到右边，盒子2跑到第一行的左边 */
+            float: right;
+            /* 情况二、左浮动, 注意：盒子2跑到盒子1的底下了,但是盒子2这个文字跑到下面了*/
+            float: left;
+        }
+
+        /* 第三种情况:盒子1和盒子2在第一行并排,盒子3落到盒子1的下一行
+        这种情况：其实就是父元素的宽度不够了,只能让不够的盒子落到下一行喽
+        */
+        .outer_new {
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        .box_new {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            border: 1px solid green;
+            margin: 10px;
+            float: left;
+        }
+
+        /* 这个是第四种情况了,由于盒子1_new太大了,把盒子挤到盒子3_new下面了 */
+        .box1_new {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+    </div>
+    <br>
+    <div class="outer_new">
+        <div class="box_new box1_new">盒子1_new</div>
+        <div class="box_new box2_new">盒子2_new</div>
+        <div class="box_new box3_new">盒子3_new</div>
+    </div>
+</body>
+
+</html>

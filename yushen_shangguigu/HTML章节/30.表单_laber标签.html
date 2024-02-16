@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30.表单_laber标签</title>
+</head>
+
+<body>
+
+    <!-- label标签 
+         label标签可与表单控件相关联,关联之后点击文字,与之对应的表单控件就会获取焦点
+     -->
+    <form action="https://search.jd.com/search">
+        <!-- 方式一 label标签中的for属性值,与input标签的id属性相关联,即、for="值"=id  -->
+        <label for="zhanghu">账户:</label>
+        <input id="zhanghu" type="text" name="account" maxlength="10"><br>
+
+        <!-- 方式二 直接将他们都包裹在label标签中-->
+        <label>
+            密码:
+            <input type="password" name="pwd" maxlength="12">
+        </label>
+        <br>
+
+        性别:
+        <input id="nan" type="radio" name="gender" value="male">
+        <label for="nan">男</label>
+        <label>
+            <input type="radio" name="gender" value="female">
+            女
+        </label>
+        <br>
+
+        爱好:
+        <input id="chouyan" type="checkbox" name="hobby" value="smoke">
+        <label for="chouyan">抽烟</label>
+        <input id="hejiu" type="checkbox" name="hobby" value="drink">
+        <label for="hejiu">喝酒</label>
+        <label>
+            <input type="checkbox" name="hobby" value="perm">
+            烫头
+        </label>
+        <br>
+
+        其他:
+        <textarea name="other" cols="30" rows="3">请输入你想要输入的内容</textarea><br>
+
+        籍贯:
+        <select name="place">
+            <option value="粤">广东</option>
+            <option value="闽">福建</option>
+            <option value="江">浙江</option>
+            <option value="苏">江苏</option>
+        </select>
+
+        <input type="hidden" name="from" value="toutiao">
+        <br>
+
+        <input type="submit" value="确认">
+
+        <input type="reset" value="点我重置">
+
+        <input type="button" value="检测账号是否被注册">
+
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 这里要先说一个概念: 行高是跟设计字体的框架有关系的,保守字体是指字体不会跨过这个框架,
+           像那些飘逸的字体,有可能字体就延伸出了框架
+        */
+
+        #d1 {
+            font-size: 30px;
+            background-color: skyblue;
+            /* 行高line-height 4种写法,第3种用的多： */
+            /* line-height: 80px; */
+            /* line-height: normal; */
+            line-height: 1.5;
+            /* line-height: 150%; */
+        }
+
+        /* 这个只是为了说明,字体的大小和行高如果一样的话,有可能字体就超过行高了。
+           如果不写行高line-height的话,其实值是normal,浏览器会根据字体大小来决定
+           行高,
+        */
+        p {
+            font-size: 30px;
+            background-color: pink;
+            line-height: 30px;
+            font-family: FORTE;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发atguigu尚硅谷让天下没有难掉的头发
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum sit expedita, necessitatibus voluptatum animi
+        explicabo dicta numquam libero? Iure, magnam.</p>
+</body>
+
+</html>

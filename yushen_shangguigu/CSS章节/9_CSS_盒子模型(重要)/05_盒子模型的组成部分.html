@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            /* 其实设置的是内容区content的宽 */
+            width: 200px;
+            /* 设置的是内容区content的高 */
+            height: 200px;
+            /* 设置内边距padding, 背景颜色会填充内边距区域 */
+            padding: 10px;
+            /* 设置边框border: 具体在6_CSS_表格相关属性文件夹的1_边框相关属性.html有介绍 */
+            border: 20px dashed red;
+            /* 设置外边框 */
+            margin: 30px;
+
+
+            font-size: 20px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        记住一幅图：
+        电脑的包装俯视图
+        电脑：内容区content, 元素中的文本或后代元素都是它的内容
+        海绵：内边距padding, 紧贴内容的补白区域
+        纸盒: 边框border, 盒子的边框
+        纸盒外部：外边距margin, 盒子与外界的距离
+        
+        从上面的解释,也能得出: 外边距margin不会影响盒子的大小,只会影响盒子的位置
+        盒子的大小 = 内容区content + 内边距padding + 边框border
+     -->
+
+    <div>你好呀~~</div>
+
+</body>
+
+</html>

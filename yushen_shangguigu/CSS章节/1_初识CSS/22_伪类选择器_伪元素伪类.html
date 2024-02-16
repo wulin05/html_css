@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_伪元素伪类</title>
+
+    <style>
+        /*  伪元素
+        作用：选中元素中的一些特殊位置
+        这里很重要: 之前学的选择器的种类: 
+        1.基本选择器(通配符、元素、类、ID)、2.复合选择器(交集、并集、后代、子代、兄弟、属性)、
+        3.伪类选择器(动态伪类、结构伪类、否定伪类、否定伪类、UI伪类、目标伪类、语言伪类)
+        最终落到的都是在元素(div、p、span等等标签里的内容),
+        但是这次不一样了,这次是要选中元素中的 "某个文字"( 也就是元素的 "某个位置" )
+
+        这时候,对伪元素下定义了,什么叫伪元素?(参考伪类的定义)
+        什么是伪元素？---- 很像元素,但不是元素(element),是元素中的一些特殊 "位置"
+        */
+
+        /* 需求一: 让第一个字母是大写红色  */
+        /* 方法1: 不够优秀 */
+        p>span {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* 方法2: 伪元素选择器 ::first-letter */
+        div::first-letter {
+            color: deepskyblue;
+            font-size: 30px;
+        }
+
+        /* 需求二: 选中div和p元素(标签)的第一行文字 ::first-line  */
+        div::first-line {
+            background-color: yellow;
+        }
+
+        /* 需求三：选中的是div中被鼠标选择的文字后,背景变成green,字体颜色变成orange  ::selection */
+        div::selection {
+            background-color: green;
+            color: orange;
+        }
+
+        /* 需求四：选中的是input元素中的提示文字"请输入您的用户名",颜色变成skyblue  ::placeholder */
+        input::placeholder {
+            color: skyblue;
+        }
+
+        /* 选中的是p元素最开始的位置,随后创建一个子元素 */
+        p::before {
+            content: "¥";
+            /* color: red; */
+        }
+
+        /* 选中的是p元素介绍的位置,随后创建一个子元素 */
+        p::after {
+            content: ".00";
+            /* color: peru; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div>...</div> 中间的... 内容可以通过 "lorem"、"lorem5"(5是用来限制单词数量) 来随机生成 -->
+    <p><span>L</span>orem ipsum dolor sit amet consectetur adipisicing elit. Vitae esse obcaecati autem saepe ex,
+        illum fuga, nam
+        similique non tempore laborum natus quaerat, hic in est assumenda. Veniam, minima labore.</p>
+
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, eveniet debitis nisi mollitia tenetur
+        molestias ullam possimus ducimus minima? Magni velit, modi hic natus nobis eaque autem maiores sapiente ullam
+        dolorum, iusto ex quisquam doloribus rerum voluptatum tempore soluta excepturi quidem nesciunt! Unde ab eaque
+        neque qui autem fugit consequatur perferendis consequuntur, natus dolores fuga saepe dicta. Labore, consequatur
+        odio.</div>
+
+    <input type="text" placeholder="请输入您的用户名"><br>
+
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>599</p>
+
+
+
+</body>
+
+</html>

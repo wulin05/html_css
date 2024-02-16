@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 1. 通配选择器
+           选中所有标签,一般用于清除样式
+        */
+        * {
+            color: orange;
+            font-size: 40px;
+        }
+
+        /* 2. 元素(标签)选择器 */
+        /* 
+        作用：为页面中 某种元素(标签) 统一设置样式
+        缺点: 无法实现差异化设置,比如所有的p标签效果都一样...
+        */
+        h1 {
+            font-size: 50px;
+        }
+
+        h2 {
+            color: chocolate;
+        }
+
+        h3 {
+            color: green;
+            font-size: 30px;
+        }
+
+        p {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* 3. 类class选择器 */
+        /* 根据元素(标签)的 class 值, 来选择某些元素(标签): .class名 */
+        .speak {
+            color: #99ff14;
+        }
+
+        .answer {
+            color: skyblue;
+        }
+
+        .big {
+            font-size: 45px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>欢迎来到土味官网,土的味道我知道</h1>
+    <h2>土味情话</h2>
+    <h3>作者: 优秀的网友们</h3>
+    <p>万水千山总是情,爱我多点行不行!</p>
+    <p>草莓、蓝莓、蔓越莓,今天你想我了没?</p>
+    <p>我心里给你留了一块地,我的死心塌地!</p>
+
+    <!-- 下面是给类选择器例子使用 -->
+    <!--  一个标签不能有两个class.., 如果有两个class,那么 "先入为主"....
+    <p class="speak" class="big">我对你说: 万水千山总是情,爱我多点行不行!</p> 
+    -->
+    <p class="speak big">我对你说: 万水千山总是情,爱我多点行不行!</p>
+    <p class="speak">我对你说: 草莓、蓝莓、蔓越莓,今天你想我了没?</p>
+    <p class="speak">我对你说: 我心里给你留了一块地,我的死心塌地!</p>
+    <span class="speak">哈哈哈</span>
+
+
+
+
+    <h2>反杀土味情话</h2>
+    <h3>作者: 更优秀的网友们</h3>
+    <p>一寸光阴一寸金,劝你死了这条心</p>
+    <p>西瓜、南瓜、户名,把你打成大傻瓜</p>
+    <p>我的心里只有一块地,我的玛莎拉蒂</p>
+
+    <!-- 下面是给类选择器例子使用 -->
+    <p class="answer">你对我说: 一寸光阴一寸金,劝你死了这条心</p>
+    <p class="answer">你对我说: 西瓜、南瓜、户名,把你打成大傻瓜</p>
+    <p class="answer">你对我说: 我的心里只有一块地,我的玛莎拉蒂</p>
+
+</body>
+
+</html>

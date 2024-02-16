@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02位置2_CSS内部样式</title>
+
+    <!-- 内部样式
+    写在html页面内部,将所有的css代码提取出来,单独放在<style>标签中
+    存在的问题：
+    1.并没有实现: 结构与样式的完全分离
+    2.多个HTML页面无法复用样式
+    -->
+    <style>
+        h1 {
+            color: red;
+            font-size: 60px;
+        }
+
+        h2 {
+            color: green;
+            font-size: 80px;
+        }
+
+        p {
+            color: blue;
+            font-size: 30px;
+        }
+
+        img {
+            width: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>欢迎来到尚硅谷学习</h1>
+    <h2>欢迎学习前端</h2>
+    <p>北京欢迎你</p>
+    <p>上海欢迎你</p>
+    <p>西安欢迎你</p>
+    <img src="path_test/音你心动.jpg" alt="音你心动">
+
+</body>
+
+</html>

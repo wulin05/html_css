@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 这个body元素选择器是消除浏览器的一些自己设置的属性,让d1,d2,d3的可以填充满浏览器一整行 */
+        /* body {
+            margin: 0;
+            background-color: gray;
+        } */
+
+        /* 块级元素是可以设置宽和高 */
+        div {
+            width: 200px;
+            height: 200px;
+        }
+
+        #d1 {
+            background-color: skyblue;
+        }
+
+        #d2 {
+            background-color: orange;
+        }
+
+        #d3 {
+            background-color: green;
+        }
+
+        .one {
+            background-color: red;
+        }
+
+        .two {
+            background-color: purple;
+        }
+
+        .three {
+            background-color: chocolate;
+        }
+
+        .four {
+            background-color: cadetblue;
+        }
+
+        img {
+            width: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p>
+        块级元素
+        特点:
+        1.在页面中独占一行,不会与任何元素公用一行，是从上到下排列的
+        2.默认宽度：撑满父元素
+        3.默认高度： 由内容撑开
+        4.可以通过CSS设置宽高
+    </p>
+    <p>
+        行内元素，又称内联元素
+        特点：
+        1.在页面中不独占一行，一行中不能容纳下的行内元素,会在下一行继续从左到右排列
+        2.默认宽度：由内容撑开
+        3.默认高度: 由内容撑开
+        4.无法通过CSS设置宽高
+    </p>
+    <p>
+        行内块元素, 又称内联块元素
+        特点：
+        1.在页面中不独占一行，一行中不能容纳下的行内元素,会在下一行继续从左到右排列
+        2.默认宽度：由内容撑开
+        3.默认高度：由内容撑开
+        4.可以通过CSS设置宽高
+    </p>
+
+    <div id="d1">上回路转不见君</div>
+    <div id="d2">雪上空留马行处</div>
+    <div id="d3">风里雨里我在CSS等你</div>
+    <hr>
+
+    <span class="one">人之初</span>
+    <span class="two">性本善</span>
+    <span class="three">行相近</span>
+    <span class="four">习相远</span>
+    <hr>
+
+    <img src="../picture1.jpg" alt="video1">
+    <img src="../picture1.jpg" alt="video2">
+    <img src="../picture1.jpg" alt="video3">
+
+
+
+
+
+
+
+
+</body>
+
+</html>

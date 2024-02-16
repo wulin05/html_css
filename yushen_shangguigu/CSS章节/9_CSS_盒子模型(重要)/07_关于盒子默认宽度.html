@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 不设置盒子width的值,那么盒子是根据body的大小,而body是根据浏览器的视口宽度
+           如果,这时候设置了margin,margin是外边距,会压缩div的宽度,
+           另外,前面说了, 盒子的大小 = 内容区content + 内边距padding + 边框border,
+           所以内边距padding和边框border的大小,都会影响到内容区content的大小
+        */
+        div {
+            height: 200px;
+            margin: 50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>你好呀~~~</div>
+</body>
+
+</html>

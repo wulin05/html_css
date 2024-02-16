@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19_UI伪类</title>
+
+    <style>
+        /* 选中的是勾选的复选框或单选框才会变色,这里单选框需要一对,不然只有一个单选框的话,选中了单选框,就没法切换了 */
+        input:checked {
+            width: 100px;
+            height: 100px;
+            /* 下面对字体和背景色的设置都是无效果的,因为对input的单选框radio和复选框checkbox是都没有用的 */
+            /* background-color: green; 
+            color: red; */
+        }
+
+        /* 选中的是被禁用的input元素 */
+        input:disabled {
+            background-color: gray;
+        }
+
+        /* 选中的是可用的input元素 用的很少,因为直接 input {} 就行了,何必再input:enabled {} 干嘛,多此一举.... */
+        input:enabled {
+            background-color: green;
+            font-size: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 复选框 -->
+    <input type="checkbox">
+    <!-- 单选框需要一对,通过name组成一对关联,而且最好都有value,不然提交的时候提交不了选中的值 -->
+    <input type="radio" name="gender" value="male">男
+    <input type="radio" name="gender" value="female">女
+    <br>
+    <input type="text">
+    <input type="text" disabled>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 2px green dashed;
+            width: 500px;
+
+            /* 独有属性: */
+            /* 控制表格的列宽table-layout: auto fixed  */
+            table-layout: fixed;
+            /* 控制单元格的间距(生效的前提,不要合并相邻单元格的边框)border-spacing:  */
+            border-spacing: 2px;
+            /* 合并相邻单元格的边框border-collapse: collapse(合并)/separate(分开),
+            如果border-collapse属性是collapse,那么border-spacing就失效了 */
+            border-collapse: separate;
+            /* 隐藏没有内容的单元格(前提也是 不要合并相邻单元格的边框) empty-cells:hide/show */
+            empty-cells: hide;
+            /* 设置表格标题的位置: top(默认值) / bottom  */
+            caption-side: top;
+
+        }
+
+        th,
+        td {
+            border: 2px orange solid;
+        }
+
+        /* 由于number是类选择器,优先级大于元素选择器table,所以会覆盖上面的table选择器设定的值 */
+        .number {
+            width: 50px;
+            height: 40px;
+            border: dotted red 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 补充下: 关于合并单元格的rowspan(行)、colspan(列)合并单元格的属性,只能在html中写,CSS是没有办法跨行和跨列的 -->
+
+    <table>
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th class="number">序号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>政治面貌</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>18</td>
+                <td></td>
+                <td>党员</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>19</td>
+                <td>女</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>王五</td>
+                <td>20</td>
+                <td>男</td>
+                <td>群众</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>赵六</td>
+                <td>21</td>
+                <td>女</td>
+                <td>团员</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>陆七</td>
+                <td>22</td>
+                <td>男</td>
+                <td>党员</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
